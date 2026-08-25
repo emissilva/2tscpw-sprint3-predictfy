@@ -1,0 +1,9 @@
+{
+  "name": "ds_mysql_fato_incidente",
+  "properties": {
+    "linkedServiceName": {"referenceName": "ls_mysql_predictfy", "type": "LinkedServiceReference"},
+    "type": "AzureMySqlTable",
+    "typeProperties": {"tableName": "fato_incidente_predictfy"},
+    "schema": []
+  }
+}

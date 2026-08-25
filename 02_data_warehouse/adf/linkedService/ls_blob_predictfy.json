@@ -1,0 +1,8 @@
+{
+  "name": "ls_blob_predictfy",
+  "properties": {
+    "annotations": ["Sprint3", "Predictfy"],
+    "type": "AzureBlobStorage",
+    "typeProperties": {"serviceEndpoint": "__INJECTED_AT_PUBLISH__", "accountKind": "StorageV2"}
+  }
+}

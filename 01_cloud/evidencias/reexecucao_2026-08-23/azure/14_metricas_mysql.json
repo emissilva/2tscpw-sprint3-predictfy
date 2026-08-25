@@ -1,0 +1,1086 @@
+{
+  "cost": 295,
+  "interval": "PT1M",
+  "namespace": "Microsoft.DBforMySQL/flexibleServers",
+  "resourceregion": "chilecentral",
+  "timespan": "2026-08-23T17:33:37Z/2026-08-23T18:33:37Z",
+  "value": [
+    {
+      "displayDescription": "Host CPU Percent",
+      "errorCode": "Success",
+      "id": "/subscriptions/cd05e955-d546-4417-8a15-9e4b6bc58902/resourceGroups/rg-predictfy-sprint3-260823es/providers/Microsoft.DBforMySQL/flexibleServers/predictfy-260823-cl/providers/Microsoft.Insights/metrics/cpu_percent",
+      "name": {
+        "localizedValue": "Host CPU Percent",
+        "value": "cpu_percent"
+      },
+      "resourceGroup": "rg-predictfy-sprint3-260823es",
+      "timeseries": [
+        {
+          "data": [
+            {
+              "timeStamp": "2026-08-23T17:33:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:34:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:35:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:36:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:37:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:38:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:39:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:40:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:41:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:42:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:43:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:44:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:45:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:46:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:47:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:48:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:49:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:50:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:51:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:52:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:53:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:54:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:55:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:56:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:57:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:58:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:59:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:00:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:01:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:02:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:03:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:04:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:05:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:06:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:07:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:08:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:09:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:10:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:11:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:12:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:13:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:14:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:15:00Z"
+            },
+            {
+              "average": 29.49,
+              "timeStamp": "2026-08-23T18:16:00Z"
+            },
+            {
+              "average": 19.935,
+              "timeStamp": "2026-08-23T18:17:00Z"
+            },
+            {
+              "average": 5.645,
+              "timeStamp": "2026-08-23T18:18:00Z"
+            },
+            {
+              "average": 3.53,
+              "timeStamp": "2026-08-23T18:19:00Z"
+            },
+            {
+              "average": 2.99,
+              "timeStamp": "2026-08-23T18:20:00Z"
+            },
+            {
+              "average": 5.225,
+              "timeStamp": "2026-08-23T18:21:00Z"
+            },
+            {
+              "average": 3.575,
+              "timeStamp": "2026-08-23T18:22:00Z"
+            },
+            {
+              "average": 3.5,
+              "timeStamp": "2026-08-23T18:23:00Z"
+            },
+            {
+              "average": 3.27,
+              "timeStamp": "2026-08-23T18:24:00Z"
+            },
+            {
+              "average": 2.735,
+              "timeStamp": "2026-08-23T18:25:00Z"
+            },
+            {
+              "average": 3.695,
+              "timeStamp": "2026-08-23T18:26:00Z"
+            },
+            {
+              "average": 3.12,
+              "timeStamp": "2026-08-23T18:27:00Z"
+            },
+            {
+              "average": 3.085,
+              "timeStamp": "2026-08-23T18:28:00Z"
+            },
+            {
+              "average": 2.89,
+              "timeStamp": "2026-08-23T18:29:00Z"
+            },
+            {
+              "average": 3.065,
+              "timeStamp": "2026-08-23T18:30:00Z"
+            },
+            {
+              "average": 3.84,
+              "timeStamp": "2026-08-23T18:31:00Z"
+            },
+            {
+              "average": 3.35,
+              "timeStamp": "2026-08-23T18:32:00Z"
+            }
+          ],
+          "metadatavalues": []
+        }
+      ],
+      "type": "Microsoft.Insights/metrics",
+      "unit": "Percent"
+    },
+    {
+      "displayDescription": "Memory Percent",
+      "errorCode": "Success",
+      "id": "/subscriptions/cd05e955-d546-4417-8a15-9e4b6bc58902/resourceGroups/rg-predictfy-sprint3-260823es/providers/Microsoft.DBforMySQL/flexibleServers/predictfy-260823-cl/providers/Microsoft.Insights/metrics/memory_percent",
+      "name": {
+        "localizedValue": "Memory Percent",
+        "value": "memory_percent"
+      },
+      "resourceGroup": "rg-predictfy-sprint3-260823es",
+      "timeseries": [
+        {
+          "data": [
+            {
+              "timeStamp": "2026-08-23T17:33:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:34:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:35:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:36:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:37:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:38:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:39:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:40:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:41:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:42:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:43:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:44:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:45:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:46:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:47:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:48:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:49:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:50:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:51:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:52:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:53:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:54:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:55:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:56:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:57:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:58:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:59:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:00:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:01:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:02:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:03:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:04:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:05:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:06:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:07:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:08:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:09:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:10:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:11:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:12:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:13:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:14:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:15:00Z"
+            },
+            {
+              "average": 7.28,
+              "timeStamp": "2026-08-23T18:16:00Z"
+            },
+            {
+              "average": 22.01,
+              "timeStamp": "2026-08-23T18:17:00Z"
+            },
+            {
+              "average": 28.11,
+              "timeStamp": "2026-08-23T18:18:00Z"
+            },
+            {
+              "average": 28.11,
+              "timeStamp": "2026-08-23T18:19:00Z"
+            },
+            {
+              "average": 28.11,
+              "timeStamp": "2026-08-23T18:20:00Z"
+            },
+            {
+              "average": 28.11,
+              "timeStamp": "2026-08-23T18:21:00Z"
+            },
+            {
+              "average": 28.11,
+              "timeStamp": "2026-08-23T18:22:00Z"
+            },
+            {
+              "average": 28.375,
+              "timeStamp": "2026-08-23T18:23:00Z"
+            },
+            {
+              "average": 28.6,
+              "timeStamp": "2026-08-23T18:24:00Z"
+            },
+            {
+              "average": 28.6,
+              "timeStamp": "2026-08-23T18:25:00Z"
+            },
+            {
+              "average": 28.605,
+              "timeStamp": "2026-08-23T18:26:00Z"
+            },
+            {
+              "average": 28.61,
+              "timeStamp": "2026-08-23T18:27:00Z"
+            },
+            {
+              "average": 28.61,
+              "timeStamp": "2026-08-23T18:28:00Z"
+            },
+            {
+              "average": 28.61,
+              "timeStamp": "2026-08-23T18:29:00Z"
+            },
+            {
+              "average": 28.61,
+              "timeStamp": "2026-08-23T18:30:00Z"
+            },
+            {
+              "average": 28.61,
+              "timeStamp": "2026-08-23T18:31:00Z"
+            },
+            {
+              "average": 28.61,
+              "timeStamp": "2026-08-23T18:32:00Z"
+            }
+          ],
+          "metadatavalues": []
+        }
+      ],
+      "type": "Microsoft.Insights/metrics",
+      "unit": "Percent"
+    },
+    {
+      "displayDescription": "Active Connections",
+      "errorCode": "Success",
+      "id": "/subscriptions/cd05e955-d546-4417-8a15-9e4b6bc58902/resourceGroups/rg-predictfy-sprint3-260823es/providers/Microsoft.DBforMySQL/flexibleServers/predictfy-260823-cl/providers/Microsoft.Insights/metrics/active_connections",
+      "name": {
+        "localizedValue": "Active Connections",
+        "value": "active_connections"
+      },
+      "resourceGroup": "rg-predictfy-sprint3-260823es",
+      "timeseries": [
+        {
+          "data": [
+            {
+              "timeStamp": "2026-08-23T17:33:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:34:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:35:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:36:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:37:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:38:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:39:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:40:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:41:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:42:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:43:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:44:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:45:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:46:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:47:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:48:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:49:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:50:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:51:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:52:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:53:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:54:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:55:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:56:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:57:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:58:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:59:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:00:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:01:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:02:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:03:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:04:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:05:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:06:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:07:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:08:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:09:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:10:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:11:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:12:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:13:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:14:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:15:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:16:00Z"
+            },
+            {
+              "average": 4.0,
+              "timeStamp": "2026-08-23T18:17:00Z"
+            },
+            {
+              "average": 4.0,
+              "timeStamp": "2026-08-23T18:18:00Z"
+            },
+            {
+              "average": 4.0,
+              "timeStamp": "2026-08-23T18:19:00Z"
+            },
+            {
+              "average": 4.0,
+              "timeStamp": "2026-08-23T18:20:00Z"
+            },
+            {
+              "average": 4.0,
+              "timeStamp": "2026-08-23T18:21:00Z"
+            },
+            {
+              "average": 4.0,
+              "timeStamp": "2026-08-23T18:22:00Z"
+            },
+            {
+              "average": 4.5,
+              "timeStamp": "2026-08-23T18:23:00Z"
+            },
+            {
+              "average": 4.0,
+              "timeStamp": "2026-08-23T18:24:00Z"
+            },
+            {
+              "average": 4.0,
+              "timeStamp": "2026-08-23T18:25:00Z"
+            },
+            {
+              "average": 4.0,
+              "timeStamp": "2026-08-23T18:26:00Z"
+            },
+            {
+              "average": 4.0,
+              "timeStamp": "2026-08-23T18:27:00Z"
+            },
+            {
+              "average": 4.0,
+              "timeStamp": "2026-08-23T18:28:00Z"
+            },
+            {
+              "average": 4.0,
+              "timeStamp": "2026-08-23T18:29:00Z"
+            },
+            {
+              "average": 4.0,
+              "timeStamp": "2026-08-23T18:30:00Z"
+            },
+            {
+              "average": 4.0,
+              "timeStamp": "2026-08-23T18:31:00Z"
+            },
+            {
+              "average": 4.0,
+              "timeStamp": "2026-08-23T18:32:00Z"
+            }
+          ],
+          "metadatavalues": []
+        }
+      ],
+      "type": "Microsoft.Insights/metrics",
+      "unit": "Count"
+    },
+    {
+      "displayDescription": "The number of times INSERT statement has been executed.",
+      "errorCode": "Success",
+      "id": "/subscriptions/cd05e955-d546-4417-8a15-9e4b6bc58902/resourceGroups/rg-predictfy-sprint3-260823es/providers/Microsoft.DBforMySQL/flexibleServers/predictfy-260823-cl/providers/Microsoft.Insights/metrics/Com_insert",
+      "name": {
+        "localizedValue": "Com Insert",
+        "value": "Com_insert"
+      },
+      "resourceGroup": "rg-predictfy-sprint3-260823es",
+      "timeseries": [
+        {
+          "data": [
+            {
+              "timeStamp": "2026-08-23T17:33:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:34:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:35:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:36:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:37:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:38:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:39:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:40:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:41:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:42:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:43:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:44:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:45:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:46:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:47:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:48:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:49:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:50:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:51:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:52:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:53:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:54:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:55:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:56:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:57:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:58:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:59:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:00:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:01:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:02:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:03:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:04:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:05:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:06:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:07:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:08:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:09:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:10:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:11:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:12:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:13:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:14:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:15:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:16:00Z"
+            },
+            {
+              "average": 2360.0,
+              "timeStamp": "2026-08-23T18:17:00Z"
+            },
+            {
+              "average": 0.0,
+              "timeStamp": "2026-08-23T18:18:00Z"
+            },
+            {
+              "average": 0.0,
+              "timeStamp": "2026-08-23T18:19:00Z"
+            },
+            {
+              "average": 0.0,
+              "timeStamp": "2026-08-23T18:20:00Z"
+            },
+            {
+              "average": 0.0,
+              "timeStamp": "2026-08-23T18:21:00Z"
+            },
+            {
+              "average": 0.0,
+              "timeStamp": "2026-08-23T18:22:00Z"
+            },
+            {
+              "average": 0.5,
+              "timeStamp": "2026-08-23T18:23:00Z"
+            },
+            {
+              "average": 0.0,
+              "timeStamp": "2026-08-23T18:24:00Z"
+            },
+            {
+              "average": 0.0,
+              "timeStamp": "2026-08-23T18:25:00Z"
+            },
+            {
+              "average": 0.0,
+              "timeStamp": "2026-08-23T18:26:00Z"
+            },
+            {
+              "average": 0.0,
+              "timeStamp": "2026-08-23T18:27:00Z"
+            },
+            {
+              "average": 0.0,
+              "timeStamp": "2026-08-23T18:28:00Z"
+            },
+            {
+              "average": 0.0,
+              "timeStamp": "2026-08-23T18:29:00Z"
+            },
+            {
+              "average": 0.0,
+              "timeStamp": "2026-08-23T18:30:00Z"
+            },
+            {
+              "average": 0.0,
+              "timeStamp": "2026-08-23T18:31:00Z"
+            },
+            {
+              "average": 0.0,
+              "timeStamp": "2026-08-23T18:32:00Z"
+            }
+          ],
+          "metadatavalues": []
+        }
+      ],
+      "type": "Microsoft.Insights/metrics",
+      "unit": "Count"
+    },
+    {
+      "displayDescription": "The number of times SELECT statement has been executed.",
+      "errorCode": "Success",
+      "id": "/subscriptions/cd05e955-d546-4417-8a15-9e4b6bc58902/resourceGroups/rg-predictfy-sprint3-260823es/providers/Microsoft.DBforMySQL/flexibleServers/predictfy-260823-cl/providers/Microsoft.Insights/metrics/Com_select",
+      "name": {
+        "localizedValue": "Com Select",
+        "value": "Com_select"
+      },
+      "resourceGroup": "rg-predictfy-sprint3-260823es",
+      "timeseries": [
+        {
+          "data": [
+            {
+              "timeStamp": "2026-08-23T17:33:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:34:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:35:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:36:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:37:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:38:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:39:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:40:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:41:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:42:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:43:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:44:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:45:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:46:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:47:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:48:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:49:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:50:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:51:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:52:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:53:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:54:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:55:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:56:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:57:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:58:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T17:59:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:00:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:01:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:02:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:03:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:04:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:05:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:06:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:07:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:08:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:09:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:10:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:11:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:12:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:13:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:14:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:15:00Z"
+            },
+            {
+              "timeStamp": "2026-08-23T18:16:00Z"
+            },
+            {
+              "average": 37.0,
+              "timeStamp": "2026-08-23T18:17:00Z"
+            },
+            {
+              "average": 6.5,
+              "timeStamp": "2026-08-23T18:18:00Z"
+            },
+            {
+              "average": 5.5,
+              "timeStamp": "2026-08-23T18:19:00Z"
+            },
+            {
+              "average": 5.0,
+              "timeStamp": "2026-08-23T18:20:00Z"
+            },
+            {
+              "average": 5.0,
+              "timeStamp": "2026-08-23T18:21:00Z"
+            },
+            {
+              "average": 7.0,
+              "timeStamp": "2026-08-23T18:22:00Z"
+            },
+            {
+              "average": 6.0,
+              "timeStamp": "2026-08-23T18:23:00Z"
+            },
+            {
+              "average": 6.0,
+              "timeStamp": "2026-08-23T18:24:00Z"
+            },
+            {
+              "average": 5.0,
+              "timeStamp": "2026-08-23T18:25:00Z"
+            },
+            {
+              "average": 4.5,
+              "timeStamp": "2026-08-23T18:26:00Z"
+            },
+            {
+              "average": 7.0,
+              "timeStamp": "2026-08-23T18:27:00Z"
+            },
+            {
+              "average": 4.5,
+              "timeStamp": "2026-08-23T18:28:00Z"
+            },
+            {
+              "average": 4.5,
+              "timeStamp": "2026-08-23T18:29:00Z"
+            },
+            {
+              "average": 5.0,
+              "timeStamp": "2026-08-23T18:30:00Z"
+            },
+            {
+              "average": 5.5,
+              "timeStamp": "2026-08-23T18:31:00Z"
+            },
+            {
+              "average": 7.0,
+              "timeStamp": "2026-08-23T18:32:00Z"
+            }
+          ],
+          "metadatavalues": []
+        }
+      ],
+      "type": "Microsoft.Insights/metrics",
+      "unit": "Count"
+    }
+  ]
+}

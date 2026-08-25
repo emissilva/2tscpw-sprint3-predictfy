@@ -1,0 +1,34 @@
+Recursos
+Nome                                        Tipo                                                Regiao
+------------------------------------------  --------------------------------------------------  ------------
+log-predictfy-sprint3                       Microsoft.OperationalInsights/workspaces            eastus2
+appi-predictfy-sprint3                      Microsoft.Insights/components                       eastus2
+predictfy260823es                           Microsoft.ContainerRegistry/registries              eastus2
+predictfy-260823-cl                         Microsoft.DBforMySQL/flexibleServers                chilecentral
+aci-predictfy-api                           Microsoft.ContainerInstance/containerGroups         eastus2
+aci-predictfy-mysql-bridge                  Microsoft.ContainerInstance/containerGroups         eastus2
+Application Insights Smart Detection        microsoft.insights/actiongroups                     global
+Failure Anomalies - appi-predictfy-sprint3  microsoft.alertsmanagement/smartDetectorAlertRules  global
+Imagem ACR
+Result
+--------
+sprint3
+Container
+Estado    FQDN                                              IP              Imagem
+--------  ------------------------------------------------  --------------  --------------------------------------------------
+Running   predictfy-api-260823es.eastus2.azurecontainer.io  135.232.51.212  predictfy260823es.azurecr.io/predictfy-api:sprint3
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   273  100   273    0     0    486      0 --:--:-- --:--:-- --:--:--   486
+{"status":"ok","timestamp":"2026-08-23T18:22:24.343805+00:00","modelos_disponiveis":["previsoes_volume","previsoes_volume_mc","previsoes_lstm","previsoes_baseline","previsoes_horizonte_prophet","risco_ola","clusters","kpi_atingimento","comparacao_modelos","segmentos_ola"]}
+MySQL
+Estado    FQDN                                          Versao    BackupDias
+--------  --------------------------------------------  --------  ------------
+Ready     predictfy-260823-cl.mysql.database.azure.com  8.0.21    1
+Monitoramento
+Nome                   Estado     Retencao
+---------------------  ---------  ----------
+log-predictfy-sprint3  Succeeded  30
+Nome                    Estado     Tipo
+----------------------  ---------  ------
+appi-predictfy-sprint3  Succeeded  web

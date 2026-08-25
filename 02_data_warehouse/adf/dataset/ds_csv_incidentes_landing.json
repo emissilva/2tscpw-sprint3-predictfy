@@ -1,0 +1,12 @@
+{
+  "name": "ds_csv_incidentes_landing",
+  "properties": {
+    "linkedServiceName": {"referenceName": "ls_blob_predictfy", "type": "LinkedServiceReference"},
+    "type": "DelimitedText",
+    "typeProperties": {
+      "location": {"type": "AzureBlobStorageLocation", "container": "landing", "fileName": "incidentes_predictfy.csv"},
+      "columnDelimiter": ",", "escapeChar": "\\", "firstRowAsHeader": true, "quoteChar": "\""
+    },
+    "schema": []
+  }
+}

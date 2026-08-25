@@ -1,0 +1,3 @@
+prioridade_bin|prioridade_codigo|prioridade_desc|ola_limite_horas
+1|P2|ALTA|4
+0|P3|MEDIA|12

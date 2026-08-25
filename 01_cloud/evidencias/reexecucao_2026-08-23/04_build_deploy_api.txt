@@ -1,0 +1,244 @@
+[1/4] Build remoto no ACR
+WARNING: Packing source code into tar to upload...
+WARNING: Excluding 'frontend/.gitignore' based on default ignore rules
+WARNING: Excluding '.gitignore' based on default ignore rules
+WARNING: Excluding '.git' based on default ignore rules
+WARNING: Uploading archived source code from '/var/folders/qh/jdh7mgkn4w558g2c70mb1vdw0000gn/T/build_archive_480734446e9f4f84a9dccc681a63b3f4.tar.gz'...
+WARNING: Sending context (68.484 MiB) to registry: predictfy260823es...
+WARNING: Queued a build with ID: ch1
+WARNING: Waiting for an agent...
+2026/08/23 18:18:07 Downloading source code...
+2026/08/23 18:18:10 Finished downloading source code
+2026/08/23 18:18:10 Using acb_vol_16a04774-af73-45e7-942b-6c80a7d92a3a as the home volume
+2026/08/23 18:18:10 Setting up Docker configuration...
+2026/08/23 18:18:11 Successfully set up Docker configuration
+2026/08/23 18:18:11 Logging in to registry: predictfy260823es.azurecr.io
+2026/08/23 18:18:12 Successfully logged into predictfy260823es.azurecr.io
+2026/08/23 18:18:12 Executing step ID: build. Timeout(sec): 28800, Working directory: '', Network: ''
+2026/08/23 18:18:12 Scanning for dependencies...
+2026/08/23 18:18:12 Successfully scanned dependencies
+2026/08/23 18:18:12 Launching container with name: build
+Sending build context to Docker daemon  209.1MB
+Step 1/8 : FROM python:3.11-slim
+3.11-slim: Pulling from library/python
+26c307b5e35a: Pulling fs layer
+7ce8f1a1db8f: Pulling fs layer
+daff6f8ae2ef: Pulling fs layer
+605d2cb1fe61: Pulling fs layer
+605d2cb1fe61: Waiting
+7ce8f1a1db8f: Verifying Checksum
+7ce8f1a1db8f: Download complete
+daff6f8ae2ef: Verifying Checksum
+daff6f8ae2ef: Download complete
+26c307b5e35a: Verifying Checksum
+26c307b5e35a: Download complete
+605d2cb1fe61: Verifying Checksum
+605d2cb1fe61: Download complete
+26c307b5e35a: Pull complete
+7ce8f1a1db8f: Pull complete
+daff6f8ae2ef: Pull complete
+605d2cb1fe61: Pull complete
+Digest: sha256:9c900dea9e8fb7e16277c179b555cc72d29a352dbc33cff48ad5a0412fd5bfc7
+Status: Downloaded newer image for python:3.11-slim
+ ---> 002792ac1935
+Step 2/8 : WORKDIR /app
+ ---> Running in 58dd3d5878a4
+Removing intermediate container 58dd3d5878a4
+ ---> 7cfcc0375996
+Step 3/8 : COPY api/requirements.txt .
+ ---> 9fa3b827b6b1
+Step 4/8 : RUN pip install --no-cache-dir -r requirements.txt
+ ---> Running in 1ef54e63d35c
+Collecting fastapi==0.115.0 (from -r requirements.txt (line 1))
+  Downloading fastapi-0.115.0-py3-none-any.whl.metadata (27 kB)
+Collecting uvicorn==0.30.6 (from uvicorn[standard]==0.30.6->-r requirements.txt (line 2))
+  Downloading uvicorn-0.30.6-py3-none-any.whl.metadata (6.6 kB)
+Collecting python-dotenv==1.0.1 (from -r requirements.txt (line 3))
+  Downloading python_dotenv-1.0.1-py3-none-any.whl.metadata (23 kB)
+Collecting httpx<1.0.0,>=0.27.0 (from -r requirements.txt (line 4))
+  Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting PyJWT<3.0.0,>=2.10.1 (from PyJWT[crypto]<3.0.0,>=2.10.1->-r requirements.txt (line 5))
+  Downloading pyjwt-2.13.0-py3-none-any.whl.metadata (3.4 kB)
+Collecting redis<7.0.0,>=5.0.0 (from -r requirements.txt (line 6))
+  Downloading redis-6.4.0-py3-none-any.whl.metadata (10 kB)
+Collecting SQLAlchemy<3.0.0,>=2.0.0 (from -r requirements.txt (line 7))
+  Downloading sqlalchemy-2.0.52-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (9.6 kB)
+Collecting psycopg<4.0.0,>=3.2.0 (from psycopg[binary]<4.0.0,>=3.2.0->-r requirements.txt (line 8))
+  Downloading psycopg-3.3.4-py3-none-any.whl.metadata (4.3 kB)
+Collecting starlette<0.39.0,>=0.37.2 (from fastapi==0.115.0->-r requirements.txt (line 1))
+  Downloading starlette-0.38.6-py3-none-any.whl.metadata (6.0 kB)
+Collecting pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4 (from fastapi==0.115.0->-r requirements.txt (line 1))
+  Downloading pydantic-2.13.4-py3-none-any.whl.metadata (109 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.4/109.4 kB 24.1 MB/s eta 0:00:00
+Collecting typing-extensions>=4.8.0 (from fastapi==0.115.0->-r requirements.txt (line 1))
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting click>=7.0 (from uvicorn==0.30.6->uvicorn[standard]==0.30.6->-r requirements.txt (line 2))
+  Downloading click-8.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting h11>=0.8 (from uvicorn==0.30.6->uvicorn[standard]==0.30.6->-r requirements.txt (line 2))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting httptools>=0.5.0 (from uvicorn[standard]==0.30.6->-r requirements.txt (line 2))
+  Downloading httptools-0.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (3.5 kB)
+Collecting pyyaml>=5.1 (from uvicorn[standard]==0.30.6->-r requirements.txt (line 2))
+  Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting uvloop!=0.15.0,!=0.15.1,>=0.14.0 (from uvicorn[standard]==0.30.6->-r requirements.txt (line 2))
+  Downloading uvloop-0.22.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.9 kB)
+Collecting watchfiles>=0.13 (from uvicorn[standard]==0.30.6->-r requirements.txt (line 2))
+  Downloading watchfiles-1.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+Collecting websockets>=10.4 (from uvicorn[standard]==0.30.6->-r requirements.txt (line 2))
+  Downloading websockets-17.0.1-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.3 kB)
+Collecting anyio (from httpx<1.0.0,>=0.27.0->-r requirements.txt (line 4))
+  Downloading anyio-4.14.2-py3-none-any.whl.metadata (4.6 kB)
+Collecting certifi (from httpx<1.0.0,>=0.27.0->-r requirements.txt (line 4))
+  Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Collecting httpcore==1.* (from httpx<1.0.0,>=0.27.0->-r requirements.txt (line 4))
+  Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting idna (from httpx<1.0.0,>=0.27.0->-r requirements.txt (line 4))
+  Downloading idna-3.19-py3-none-any.whl.metadata (9.2 kB)
+Collecting greenlet>=1 (from SQLAlchemy<3.0.0,>=2.0.0->-r requirements.txt (line 7))
+  Downloading greenlet-3.5.5-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting psycopg-binary==3.3.4 (from psycopg[binary]<4.0.0,>=3.2.0->-r requirements.txt (line 8))
+  Downloading psycopg_binary-3.3.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.7 kB)
+Collecting cryptography>=3.4.0 (from PyJWT[crypto]<3.0.0,>=2.10.1->-r requirements.txt (line 5))
+  Downloading cryptography-50.0.0-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.3 kB)
+Collecting cffi>=2.0.0 (from cryptography>=3.4.0->PyJWT[crypto]<3.0.0,>=2.10.1->-r requirements.txt (line 5))
+  Downloading cffi-2.1.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+Collecting annotated-types>=0.6.0 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi==0.115.0->-r requirements.txt (line 1))
+  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.46.4 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi==0.115.0->-r requirements.txt (line 1))
+  Downloading pydantic_core-2.46.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+Collecting typing-inspection>=0.4.2 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi==0.115.0->-r requirements.txt (line 1))
+  Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+Collecting pycparser (from cffi>=2.0.0->cryptography>=3.4.0->PyJWT[crypto]<3.0.0,>=2.10.1->-r requirements.txt (line 5))
+  Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Downloading fastapi-0.115.0-py3-none-any.whl (94 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 94.6/94.6 kB 410.6 MB/s eta 0:00:00
+Downloading uvicorn-0.30.6-py3-none-any.whl (62 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.8/62.8 kB 383.3 MB/s eta 0:00:00
+Downloading python_dotenv-1.0.1-py3-none-any.whl (19 kB)
+Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 310.7 MB/s eta 0:00:00
+Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 kB 415.7 MB/s eta 0:00:00
+Downloading pyjwt-2.13.0-py3-none-any.whl (31 kB)
+Downloading redis-6.4.0-py3-none-any.whl (279 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 279.8/279.8 kB 44.5 MB/s eta 0:00:00
+Downloading sqlalchemy-2.0.52-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 225.0 MB/s eta 0:00:00
+Downloading psycopg-3.3.4-py3-none-any.whl (213 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 213.0/213.0 kB 481.2 MB/s eta 0:00:00
+Downloading psycopg_binary-3.3.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 391.9 MB/s eta 0:00:00
+Downloading click-8.4.2-py3-none-any.whl (119 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 119.2/119.2 kB 465.8 MB/s eta 0:00:00
+Downloading cryptography-50.0.0-cp311-abi3-manylinux_2_34_x86_64.whl (4.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 379.7 MB/s eta 0:00:00
+Downloading greenlet-3.5.5-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (624 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 624.6/624.6 kB 470.3 MB/s eta 0:00:00
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading httptools-0.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (464 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 464.7/464.7 kB 478.5 MB/s eta 0:00:00
+Downloading pydantic-2.13.4-py3-none-any.whl (472 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 472.3/472.3 kB 509.2 MB/s eta 0:00:00
+Downloading pydantic_core-2.46.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 423.9 MB/s eta 0:00:00
+Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 446.7 MB/s eta 0:00:00
+Downloading starlette-0.38.6-py3-none-any.whl (71 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.5/71.5 kB 276.8 MB/s eta 0:00:00
+Downloading anyio-4.14.2-py3-none-any.whl (125 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.8/125.8 kB 363.0 MB/s eta 0:00:00
+Downloading idna-3.19-py3-none-any.whl (68 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.5/68.5 kB 276.4 MB/s eta 0:00:00
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 238.9 MB/s eta 0:00:00
+Downloading uvloop-0.22.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 366.8 MB/s eta 0:00:00
+Downloading watchfiles-1.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (456 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 456.9/456.9 kB 534.8 MB/s eta 0:00:00
+Downloading websockets-17.0.1-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (219 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 219.9/219.9 kB 417.7 MB/s eta 0:00:00
+Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 137.0/137.0 kB 395.3 MB/s eta 0:00:00
+Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading cffi-2.1.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (217 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 217.8/217.8 kB 496.4 MB/s eta 0:00:00
+Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.2/48.2 kB 371.4 MB/s eta 0:00:00
+Installing collected packages: websockets, uvloop, typing-extensions, redis, pyyaml, python-dotenv, PyJWT, pycparser, psycopg-binary, idna, httptools, h11, greenlet, click, certifi, annotated-types, uvicorn, typing-inspection, SQLAlchemy, pydantic-core, psycopg, httpcore, cffi, anyio, watchfiles, starlette, pydantic, httpx, cryptography, fastapi
+Successfully installed PyJWT-2.13.0 SQLAlchemy-2.0.52 annotated-types-0.8.0 anyio-4.14.2 certifi-2026.7.22 cffi-2.1.1 click-8.4.2 cryptography-50.0.0 fastapi-0.115.0 greenlet-3.5.5 h11-0.16.0 httpcore-1.0.9 httptools-0.8.0 httpx-0.28.1 idna-3.19 psycopg-3.3.4 psycopg-binary-3.3.4 pycparser-3.0 pydantic-2.13.4 pydantic-core-2.46.4 python-dotenv-1.0.1 pyyaml-6.0.3 redis-6.4.0 starlette-0.38.6 typing-extensions-4.16.0 typing-inspection-0.4.4 uvicorn-0.30.6 uvloop-0.22.1 watchfiles-1.2.0 websockets-17.0.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+
+[notice] A new release of pip is available: 24.0 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
+Removing intermediate container 1ef54e63d35c
+ ---> 03adfeb79735
+Step 5/8 : COPY api/ ./api/
+ ---> 21cb43f79c3a
+Step 6/8 : COPY outputs/ ./outputs/
+ ---> 752dc4afb024
+Step 7/8 : EXPOSE 8000
+ ---> Running in a885a505d9a2
+Removing intermediate container a885a505d9a2
+ ---> b8f03fe60a10
+Step 8/8 : CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+ ---> Running in 0030945422ef
+Removing intermediate container 0030945422ef
+ ---> e3697c62b9f8
+Successfully built e3697c62b9f8
+Successfully tagged predictfy260823es.azurecr.io/predictfy-api:sprint3
+2026/08/23 18:18:35 Successfully executed container: build
+2026/08/23 18:18:35 Executing step ID: push. Timeout(sec): 3600, Working directory: '', Network: ''
+2026/08/23 18:18:35 Pushing image: predictfy260823es.azurecr.io/predictfy-api:sprint3, attempt 1
+The push refers to repository [predictfy260823es.azurecr.io/predictfy-api]
+1a55b916dbf8: Preparing
+ca12f5615846: Preparing
+dc2a85f48012: Preparing
+3fbaacc958d9: Preparing
+5ed29567dd19: Preparing
+1a8800d1b976: Preparing
+3d7dddf62be3: Preparing
+275f0a9e4758: Preparing
+6f9432833129: Preparing
+1a8800d1b976: Waiting
+3d7dddf62be3: Waiting
+275f0a9e4758: Waiting
+6f9432833129: Waiting
+ca12f5615846: Pushed
+3fbaacc958d9: Pushed
+5ed29567dd19: Pushed
+1a55b916dbf8: Pushed
+1a8800d1b976: Pushed
+275f0a9e4758: Pushed
+3d7dddf62be3: Pushed
+6f9432833129: Pushed
+dc2a85f48012: Pushed
+sprint3: digest: sha256:fd9404943b7d027dea8d5d883cfecdbb9700962413d21fb55ce8b3fe82f127b1 size: 2203
+2026/08/23 18:18:49 Successfully pushed image: predictfy260823es.azurecr.io/predictfy-api:sprint3
+2026/08/23 18:18:49 Step ID: build marked as successful (elapsed time in seconds: 23.365175)
+2026/08/23 18:18:49 Populating digests for step ID: build...
+2026/08/23 18:18:49 Successfully populated digests for step ID: build
+2026/08/23 18:18:49 Step ID: push marked as successful (elapsed time in seconds: 13.593259)
+2026/08/23 18:18:49 The following dependencies were found:
+2026/08/23 18:18:49 
+- image:
+    registry: predictfy260823es.azurecr.io
+    repository: predictfy-api
+    tag: sprint3
+    digest: sha256:fd9404943b7d027dea8d5d883cfecdbb9700962413d21fb55ce8b3fe82f127b1
+  runtime-dependency:
+    registry: registry.hub.docker.com
+    repository: library/python
+    tag: 3.11-slim
+    digest: sha256:9c900dea9e8fb7e16277c179b555cc72d29a352dbc33cff48ad5a0412fd5bfc7
+  git: {}
+
+Run ID: ch1 was successful after 43s
+[2/4] Remoção controlada somente do ACI anterior com o mesmo nome
+[3/4] Deploy do container
+Name               ResourceGroup                  Status    Image                                               IP:ports             Network    CPU/Memory       OsType    Location
+-----------------  -----------------------------  --------  --------------------------------------------------  -------------------  ---------  ---------------  --------  ----------
+aci-predictfy-api  rg-predictfy-sprint3-260823es  Running   predictfy260823es.azurecr.io/predictfy-api:sprint3  135.232.51.212:8000  Public     1.0 core/2.0 gb  Linux     eastus2
+[4/4] Endpoint
+API: http://predictfy-api-260823es.eastus2.azurecontainer.io:8000/api/health
+Observação: para produção, publicar atrás de uma camada HTTPS.

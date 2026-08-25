@@ -1,0 +1,11 @@
+Nome                                        Tipo                                                Regiao
+------------------------------------------  --------------------------------------------------  ------------
+log-predictfy-sprint3                       Microsoft.OperationalInsights/workspaces            eastus2
+appi-predictfy-sprint3                      Microsoft.Insights/components                       eastus2
+predictfy260823es                           Microsoft.ContainerRegistry/registries              eastus2
+predictfy-260823-cl                         Microsoft.DBforMySQL/flexibleServers                chilecentral
+aci-predictfy-api                           Microsoft.ContainerInstance/containerGroups         eastus2
+aci-predictfy-mysql-bridge                  Microsoft.ContainerInstance/containerGroups         eastus2
+Application Insights Smart Detection        microsoft.insights/actiongroups                     global
+Failure Anomalies - appi-predictfy-sprint3  microsoft.alertsmanagement/smartDetectorAlertRules  global
+CONFIRMADO: Resource Group removido e recursos encerrados.

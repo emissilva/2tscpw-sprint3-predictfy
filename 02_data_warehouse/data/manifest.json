@@ -1,0 +1,11 @@
+{
+  "source_relative": "locaweb/data/processed/incidents_features.csv",
+  "destination": "incidentes_predictfy.csv",
+  "rows": 25588,
+  "columns": 32,
+  "source_sha256": "1e72175cb2617de94a808de7878f186c667a2d8de24c1fae05db858fb16a4d0c",
+  "destination_sha256": "eba2bd7784549d7c42128e5d4958583ceb4b5193d8cfb43228d1ce8ed4ebb19f",
+  "rules_file": "regras_ola.txt",
+  "rules_sha256": "3fb42b45cf9e7b29db595c95ba828c347c12557a33f128a6c375cee689a30e79",
+  "contains_personal_data": false
+}

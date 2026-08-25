@@ -1,0 +1,42 @@
+[
+  {
+    "Nome": "log-predictfy-sprint3",
+    "Regiao": "eastus2",
+    "Tipo": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Nome": "appi-predictfy-sprint3",
+    "Regiao": "eastus2",
+    "Tipo": "Microsoft.Insights/components"
+  },
+  {
+    "Nome": "predictfy260823es",
+    "Regiao": "eastus2",
+    "Tipo": "Microsoft.ContainerRegistry/registries"
+  },
+  {
+    "Nome": "predictfy-260823-cl",
+    "Regiao": "chilecentral",
+    "Tipo": "Microsoft.DBforMySQL/flexibleServers"
+  },
+  {
+    "Nome": "aci-predictfy-api",
+    "Regiao": "eastus2",
+    "Tipo": "Microsoft.ContainerInstance/containerGroups"
+  },
+  {
+    "Nome": "aci-predictfy-mysql-bridge",
+    "Regiao": "eastus2",
+    "Tipo": "Microsoft.ContainerInstance/containerGroups"
+  },
+  {
+    "Nome": "Application Insights Smart Detection",
+    "Regiao": "global",
+    "Tipo": "microsoft.insights/actiongroups"
+  },
+  {
+    "Nome": "Failure Anomalies - appi-predictfy-sprint3",
+    "Regiao": "global",
+    "Tipo": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  }
+]

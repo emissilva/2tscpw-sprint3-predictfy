@@ -1,0 +1,23 @@
+<mxfile host="app.diagrams.net" modified="2026-08-23T22:51:07.000Z" agent="Codex" version="24.7.17">
+  <diagram id="predictfy-dw" name="Ingestao ADF">
+    <mxGraphModel dx="1400" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="Predictfy AIOps — Ingestão Data Warehouse — Sprint 3" style="text;html=1;align=center;fontSize=24;fontStyle=1;fontColor=#172B4D;" vertex="1" parent="1"><mxGeometry x="280" y="30" width="900" height="40" as="geometry"/></mxCell>
+        <mxCell id="csv" value="&lt;b&gt;CSV Features Predictfy&lt;/b&gt;&lt;br&gt;25.588 linhas&lt;br&gt;origem somente leitura" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;" vertex="1" parent="1"><mxGeometry x="40" y="170" width="210" height="90" as="geometry"/></mxCell>
+        <mxCell id="rules" value="&lt;b&gt;TXT Regras OLA&lt;/b&gt;&lt;br&gt;P2 = 4h&lt;br&gt;P3 = 12h" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;" vertex="1" parent="1"><mxGeometry x="40" y="310" width="210" height="90" as="geometry"/></mxCell>
+        <mxCell id="landing" value="&lt;b&gt;Azure Blob Storage&lt;/b&gt;&lt;br&gt;container landing&lt;br&gt;Stage Area" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#E8EAF6;strokeColor=#3F51B5;" vertex="1" parent="1"><mxGeometry x="330" y="220" width="210" height="120" as="geometry"/></mxCell>
+        <mxCell id="flow" value="&lt;b&gt;Azure Data Factory&lt;/b&gt;&lt;br&gt;Select → Filter → Join&lt;br&gt;Derived Column → Alter Row&lt;br&gt;ADF Monitor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;" vertex="1" parent="1"><mxGeometry x="630" y="210" width="250" height="140" as="geometry"/></mxCell>
+        <mxCell id="mysql" value="&lt;b&gt;Azure MySQL PaaS&lt;/b&gt;&lt;br&gt;fato_incidente_predictfy&lt;br&gt;upsert por chave técnica" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#E8F5E9;strokeColor=#2E7D32;" vertex="1" parent="1"><mxGeometry x="990" y="140" width="240" height="120" as="geometry"/></mxCell>
+        <mxCell id="txt" value="&lt;b&gt;Azure Blob Storage&lt;/b&gt;&lt;br&gt;container curated&lt;br&gt;TXT pipe-delimited" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#FFF3E0;strokeColor=#EF6C00;" vertex="1" parent="1"><mxGeometry x="990" y="320" width="240" height="110" as="geometry"/></mxCell>
+        <mxCell id="note" value="Resource Group exclusivo rg-predictfy-dw-sprint3-260823es. Duas cargas Succeeded: 25.588 linhas no MySQL e no TXT; descarte confirmado após as evidências." style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFDE7;strokeColor=#9E9D24;" vertex="1" parent="1"><mxGeometry x="420" y="510" width="600" height="100" as="geometry"/></mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#1565C0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="csv" target="landing"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#F9A825;" edge="1" parent="1" source="rules" target="landing"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#3F51B5;" edge="1" parent="1" source="landing" target="flow"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#2E7D32;" edge="1" parent="1" source="flow" target="mysql"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#EF6C00;" edge="1" parent="1" source="flow" target="txt"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

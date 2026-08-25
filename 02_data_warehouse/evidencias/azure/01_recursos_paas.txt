@@ -1,0 +1,3 @@
+adf-predictfy-dw-260823es                  Microsoft.DataFactory/factories                            eastus2
+mysql-predictfy-dw-260823es                Microsoft.DBforMySQL/flexibleServers                       chilecentral
+pfdw260823es                               Microsoft.Storage/storageAccounts                          eastus2

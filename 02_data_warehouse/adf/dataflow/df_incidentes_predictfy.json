@@ -1,0 +1,35 @@
+{
+  "name": "df_incidentes_predictfy",
+  "properties": {
+    "type": "MappingDataFlow",
+    "typeProperties": {
+      "sources": [
+        {"dataset": {"referenceName": "ds_csv_incidentes_landing", "type": "DatasetReference"}, "name": "sourceIncidentes"},
+        {"dataset": {"referenceName": "ds_txt_regras_ola", "type": "DatasetReference"}, "name": "sourceRegrasOla"}
+      ],
+      "sinks": [
+        {"dataset": {"referenceName": "ds_mysql_fato_incidente", "type": "DatasetReference"}, "name": "sinkMySql"},
+        {"dataset": {"referenceName": "ds_txt_incidentes_curated", "type": "DatasetReference"}, "name": "sinkTxt"}
+      ],
+      "transformations": [
+        {"name": "selectContrato"}, {"name": "filterValidos"}, {"name": "derivePrioridade"},
+        {"name": "selectRegras"}, {"name": "joinRegrasOla"}, {"name": "deriveNegocio"}, {"name": "selectDestino"},
+        {"name": "alterRowUpsert"}
+      ],
+      "scriptLines": [
+        "source(output(source_row_number as string, hora as string, dia_semana as string, mes as string, trimestre as string, is_horario_comercial as string, is_fim_de_semana as string, lag_1d as string, lag_7d as string, rolling_7d as string, rolling_30d as string, prioridade_bin as string, is_feriado as string, target_ola as string), allowSchemaDrift:true, validateSchema:false, ignoreNoFilesFound:false) ~> sourceIncidentes",
+        "source(output(prioridade_bin as string, prioridade_codigo as string, prioridade_desc as string, ola_limite_horas as string), allowSchemaDrift:true, validateSchema:false, ignoreNoFilesFound:false) ~> sourceRegrasOla",
+        "sourceIncidentes select(mapColumn(source_row_number, hora, dia_semana, mes, trimestre, is_horario_comercial, is_fim_de_semana, lag_1d, lag_7d, rolling_7d, rolling_30d, prioridade_bin, is_feriado, target_ola), skipDuplicateMapInputs:true, skipDuplicateMapOutputs:true) ~> selectContrato",
+        "selectContrato filter(!isNull(toInteger(hora)) && between(toInteger(hora), 0, 23) && !isNull(toInteger(target_ola)) && (toInteger(target_ola) == 0 || toInteger(target_ola) == 1) && !isNull(toDecimal(rolling_7d)) && !isNull(toDecimal(rolling_30d))) ~> filterValidos",
+        "filterValidos derive(prioridade_codigo = iif(toInteger(prioridade_bin) == 1, 'P2', 'P3')) ~> derivePrioridade",
+        "sourceRegrasOla select(mapColumn(prioridade_codigo_regra = prioridade_codigo, prioridade_desc_regra = prioridade_desc, ola_limite_horas_regra = ola_limite_horas), skipDuplicateMapInputs:true, skipDuplicateMapOutputs:true) ~> selectRegras",
+        "derivePrioridade, selectRegras join(prioridade_codigo == prioridade_codigo_regra, joinType:'left', matchType:'exact', ignoreSpaces:false, broadcast:'right') ~> joinRegrasOla",
+        "joinRegrasOla derive(incident_feature_id = sha2(256, concat('PREDICTFY_INCIDENTS_FEATURES_V1|', toString(source_row_number))), hora = toInteger(hora), dia_semana = toInteger(dia_semana), mes = toInteger(mes), trimestre = toInteger(trimestre), is_horario_comercial = toInteger(is_horario_comercial), is_fim_de_semana = toInteger(is_fim_de_semana), lag_1d = toDecimal(lag_1d), lag_7d = toDecimal(lag_7d), rolling_7d = toDecimal(rolling_7d), rolling_30d = toDecimal(rolling_30d), is_feriado = toInteger(is_feriado), target_ola = toInteger(target_ola), periodo_dia_desc = case(toInteger(hora) < 6, 'MADRUGADA', toInteger(hora) < 12, 'MANHA', toInteger(hora) < 18, 'TARDE', 'NOITE'), ocorrencia_ola = iif(toInteger(target_ola) == 1, 'VIOLADO', 'ATENDIDO'), media_movel_delta = round(toDecimal(rolling_7d) - toDecimal(rolling_30d), 4), tendencia_volume = case(toDecimal(rolling_7d) - toDecimal(rolling_30d) > 2, 'ALTA', toDecimal(rolling_7d) - toDecimal(rolling_30d) < -2, 'BAIXA', 'ESTAVEL'), contexto_calendario = iif(toInteger(is_feriado) == 1, 'FERIADO', iif(toInteger(is_fim_de_semana) == 1, 'FIM_SEMANA', 'DIA_UTIL')), ola_limite_horas = toInteger(ola_limite_horas_regra), prioridade_desc = prioridade_desc_regra, data_processamento_utc = currentUTC(), origem_dado = 'PREDICTFY_INCIDENTS_FEATURES_V1', arquivo_origem = 'incidentes_predictfy.csv') ~> deriveNegocio",
+        "deriveNegocio select(mapColumn(incident_feature_id, hora, dia_semana, mes, trimestre, prioridade_codigo, prioridade_desc, ola_limite_horas, is_horario_comercial, is_fim_de_semana, periodo_dia_desc, lag_1d, lag_7d, rolling_7d, rolling_30d, media_movel_delta, tendencia_volume, is_feriado, contexto_calendario, target_ola, ocorrencia_ola, origem_dado, arquivo_origem, data_processamento_utc), skipDuplicateMapInputs:true, skipDuplicateMapOutputs:true) ~> selectDestino",
+        "selectDestino alterRow(upsertIf(true())) ~> alterRowUpsert",
+        "alterRowUpsert sink(allowSchemaDrift:true, validateSchema:false, deletable:false, insertable:false, updateable:false, upsertable:true, keys:['incident_feature_id'], format:'table', batchSize:10000, skipDuplicateMapInputs:true, skipDuplicateMapOutputs:true, partitionBy('hash', 8, incident_feature_id)) ~> sinkMySql",
+        "selectDestino sink(allowSchemaDrift:true, validateSchema:false, truncate:true, partitionFileNames:['incidentes_predictfy.txt'], skipDuplicateMapInputs:true, skipDuplicateMapOutputs:true) ~> sinkTxt"
+      ]
+    }
+  }
+}

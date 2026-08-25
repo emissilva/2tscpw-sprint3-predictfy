@@ -1,0 +1,30 @@
+{
+  "outputs": {
+    "dataFactoryName": {
+      "type": "String",
+      "value": "adf-predictfy-dw-260823es"
+    },
+    "databaseName": {
+      "type": "String",
+      "value": "predictfy"
+    },
+    "mysqlFqdn": {
+      "type": "String",
+      "value": "mysql-predictfy-dw-260823es.mysql.database.azure.com"
+    },
+    "mysqlServerName": {
+      "type": "String",
+      "value": "mysql-predictfy-dw-260823es"
+    },
+    "storageAccountName": {
+      "type": "String",
+      "value": "pfdw260823es"
+    },
+    "storageBlobEndpoint": {
+      "type": "String",
+      "value": "https://pfdw260823es.blob.core.windows.net/"
+    }
+  },
+  "state": "Succeeded",
+  "timestamp": "2026-08-23T23:29:06.185435+00:00"
+}

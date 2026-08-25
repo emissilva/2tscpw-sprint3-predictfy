@@ -1,0 +1,52 @@
+[1/6] Resource Group
+Location    Name
+----------  -----------------------------
+eastus2     rg-predictfy-sprint3-260823es
+[2/6] Log Analytics Workspace
+CreatedDate                   CustomerId                            Location    ModifiedDate                  Name                   ProvisioningState    PublicNetworkAccessForIngestion    PublicNetworkAccessForQuery    ResourceGroup                  RetentionInDays
+----------------------------  ------------------------------------  ----------  ----------------------------  ---------------------  -------------------  ---------------------------------  -----------------------------  -----------------------------  -----------------
+2026-08-23T18:10:46.0393004Z  1b469364-ea77-4a34-a8d5-e56a003c85ac  eastus2     2026-08-23T18:10:58.5463433Z  log-predictfy-sprint3  Succeeded            Enabled                            Enabled                        rg-predictfy-sprint3-260823es  30
+[3/6] Application Insights
+WARNING: Extension 'application-insights' has a later preview version to install, add `--allow-preview True` to try preview version.
+WARNING: Extension 'application-insights' 1.2.3 is already installed.
+WARNING: Latest version of 'application-insights' is already installed.
+AppId                                 ApplicationId           ApplicationType    ConnectionString                                                                                                                                                                                                                                  CreationDate                      FlowType    IngestionMode    InstrumentationKey                    Kind    Location    Name                    NamePropertiesName      ProvisioningState    PublicNetworkAccessForIngestion    PublicNetworkAccessForQuery    RequestSource    ResourceGroup                  RetentionInDays    TenantId                              WorkspaceResourceId
+------------------------------------  ----------------------  -----------------  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  --------------------------------  ----------  ---------------  ------------------------------------  ------  ----------  ----------------------  ----------------------  -------------------  ---------------------------------  -----------------------------  ---------------  -----------------------------  -----------------  ------------------------------------  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+17f2cbf9-59e8-483b-8b72-230cae7efd06  appi-predictfy-sprint3  web                InstrumentationKey=3a0be440-d35f-4801-b461-00b19ff11f82;IngestionEndpoint=https://eastus2-3.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus2.livediagnostics.monitor.azure.com/;ApplicationId=17f2cbf9-59e8-483b-8b72-230cae7efd06  2026-08-23T18:11:28.624312+00:00  Bluefield   LogAnalytics     3a0be440-d35f-4801-b461-00b19ff11f82  web     eastus2     appi-predictfy-sprint3  appi-predictfy-sprint3  Succeeded            Enabled                            Enabled                        rest             rg-predictfy-sprint3-260823es  90                 cd05e955-d546-4417-8a15-9e4b6bc58902  /subscriptions/cd05e955-d546-4417-8a15-9e4b6bc58902/resourceGroups/rg-predictfy-sprint3-260823es/providers/Microsoft.OperationalInsights/workspaces/log-predictfy-sprint3
+[4/6] Azure Container Registry
+NAME               RESOURCE GROUP                 LOCATION    SKU    LOGIN SERVER                  CREATION DATE         ADMIN ENABLED
+-----------------  -----------------------------  ----------  -----  ----------------------------  --------------------  ---------------
+predictfy260823es  rg-predictfy-sprint3-260823es  eastus2     Basic  predictfy260823es.azurecr.io  2026-08-23T18:11:31Z  True
+[5/6] Azure Database for MySQL Flexible Server
+WARNING: Checking the existence of the resource group 'rg-predictfy-sprint3-260823es'...
+WARNING: Resource group 'rg-predictfy-sprint3-260823es' exists ? : True 
+ERROR: Incorrect value for --version. Allowed values : {'5.7', '8.4', '9.5', '8.0.21'}
+[1/6] Resource Group
+Location    Name
+----------  -----------------------------
+eastus2     rg-predictfy-sprint3-260823es
+[2/6] Log Analytics Workspace
+CreatedDate                   CustomerId                            Location    ModifiedDate                  Name                   ProvisioningState    PublicNetworkAccessForIngestion    PublicNetworkAccessForQuery    ResourceGroup                  RetentionInDays
+----------------------------  ------------------------------------  ----------  ----------------------------  ---------------------  -------------------  ---------------------------------  -----------------------------  -----------------------------  -----------------
+2026-08-23T18:10:46.0393004Z  1b469364-ea77-4a34-a8d5-e56a003c85ac  eastus2     2026-08-23T18:11:59.1450364Z  log-predictfy-sprint3  Succeeded            Enabled                            Enabled                        rg-predictfy-sprint3-260823es  30
+[3/6] Application Insights
+WARNING: Extension 'application-insights' has a later preview version to install, add `--allow-preview True` to try preview version.
+WARNING: Extension 'application-insights' 1.2.3 is already installed.
+WARNING: Latest version of 'application-insights' is already installed.
+AppId                                 ApplicationId           ApplicationType    ConnectionString                                                                                                                                                                                                                                  CreationDate                      FlowType    IngestionMode    InstrumentationKey                    Kind    Location    Name                    NamePropertiesName      ProvisioningState    PublicNetworkAccessForIngestion    PublicNetworkAccessForQuery    RequestSource    ResourceGroup                  RetentionInDays    TenantId                              WorkspaceResourceId
+------------------------------------  ----------------------  -----------------  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  --------------------------------  ----------  ---------------  ------------------------------------  ------  ----------  ----------------------  ----------------------  -------------------  ---------------------------------  -----------------------------  ---------------  -----------------------------  -----------------  ------------------------------------  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+17f2cbf9-59e8-483b-8b72-230cae7efd06  appi-predictfy-sprint3  web                InstrumentationKey=3a0be440-d35f-4801-b461-00b19ff11f82;IngestionEndpoint=https://eastus2-3.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus2.livediagnostics.monitor.azure.com/;ApplicationId=17f2cbf9-59e8-483b-8b72-230cae7efd06  2026-08-23T18:11:28.624312+00:00  Bluefield   LogAnalytics     3a0be440-d35f-4801-b461-00b19ff11f82  web     eastus2     appi-predictfy-sprint3  appi-predictfy-sprint3  Succeeded            Enabled                            Enabled                        rest             rg-predictfy-sprint3-260823es  90                 cd05e955-d546-4417-8a15-9e4b6bc58902  /subscriptions/cd05e955-d546-4417-8a15-9e4b6bc58902/resourceGroups/rg-predictfy-sprint3-260823es/providers/Microsoft.OperationalInsights/workspaces/log-predictfy-sprint3
+[4/6] Azure Container Registry
+NAME               RESOURCE GROUP                 LOCATION    SKU    LOGIN SERVER                  CREATION DATE         ADMIN ENABLED
+-----------------  -----------------------------  ----------  -----  ----------------------------  --------------------  ---------------
+predictfy260823es  rg-predictfy-sprint3-260823es  eastus2     Basic  predictfy260823es.azurecr.io  2026-08-23T18:11:31Z  True
+[5/6] Azure Database for MySQL Flexible Server
+WARNING: Checking the existence of the resource group 'rg-predictfy-sprint3-260823es'...
+WARNING: Resource group 'rg-predictfy-sprint3-260823es' exists ? : True 
+WARNING: IOPS is 396 which is either your input or free(maximum) IOPS supported for your storage size and SKU.
+WARNING: Creating MySQL Server 'predictfy-260823-cl' in group 'rg-predictfy-sprint3-260823es'...
+WARNING: Your server 'predictfy-260823-cl' is using sku 'Standard_B1ms' (Paid Tier). Please refer to https://aka.ms/mysql-pricing for pricing details
+WARNING: Configuring server firewall rule, 'azure-access', to accept connections from all Azure resources...
+ERROR: (InternalServerError) An unexpected error occured while processing the request. Tracking ID: '145666c1-bb9a-4c5e-9056-01db49fb1943'
+Code: InternalServerError
+Message: An unexpected error occured while processing the request. Tracking ID: '145666c1-bb9a-4c5e-9056-01db49fb1943'

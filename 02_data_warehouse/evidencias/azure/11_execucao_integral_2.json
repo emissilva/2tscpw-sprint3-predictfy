@@ -1,0 +1,23 @@
+{
+  "pipelineRunId": "a38d5e24-0bbf-4e1c-8708-ac15f8667c46",
+  "status": "Succeeded",
+  "activity": "ExecutarDataFlowIncidentes",
+  "start": "2026-08-23T23:57:55.296150+00:00",
+  "end": "2026-08-24T00:15:31.032670+00:00",
+  "durationInMs": 1055736,
+  "integrationRuntime": "AutoResolveIntegrationRuntime (East US 2)",
+  "sourceRows": 25588,
+  "rulesRows": 2,
+  "mysqlRowsWritten": 25588,
+  "txtRowsWritten": 25588,
+  "mysqlPartitionCounts": [
+    3331,
+    3179,
+    3127,
+    3149,
+    3209,
+    3165,
+    3205,
+    3223
+  ]
+}

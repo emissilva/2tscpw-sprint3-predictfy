@@ -1,0 +1,7 @@
+INFO:     Started server process [18]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[startup] Modelos disponíveis em outputs/: ['previsoes_volume', 'previsoes_volume_mc', 'previsoes_lstm', 'previsoes_baseline', 'previsoes_horizonte_prophet', 'risco_ola', 'clusters', 'kpi_atingimento', 'comparacao_modelos', 'segmentos_ola']
+INFO:     10.92.0.11:54754 - "GET /api/health HTTP/1.1" 200 OK
+

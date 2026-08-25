@@ -1,0 +1,380 @@
+[1/4] Build do bridge no ACR
+WARNING: Packing source code into tar to upload...
+WARNING: Excluding 'locaweb/frontend/.gitignore' based on default ignore rules
+WARNING: Excluding 'locaweb/.gitignore' based on default ignore rules
+WARNING: Excluding 'locaweb/.git' based on default ignore rules
+WARNING: Uploading archived source code from '/var/folders/qh/jdh7mgkn4w558g2c70mb1vdw0000gn/T/build_archive_8bfcd4d97b0c4245976c9be55e7dae3b.tar.gz'...
+WARNING: Sending context (104.669 MiB) to registry: predictfy260823es...
+WARNING: Queued a build with ID: ch2
+WARNING: Waiting for an agent...
+2026/08/23 18:20:21 Downloading source code...
+2026/08/23 18:20:24 Finished downloading source code
+2026/08/23 18:20:24 Using acb_vol_f6efa4d0-fdfa-48dd-a8d6-7f25f7a14040 as the home volume
+2026/08/23 18:20:24 Setting up Docker configuration...
+2026/08/23 18:20:25 Successfully set up Docker configuration
+2026/08/23 18:20:25 Logging in to registry: predictfy260823es.azurecr.io
+2026/08/23 18:20:25 Successfully logged into predictfy260823es.azurecr.io
+2026/08/23 18:20:25 Executing step ID: build. Timeout(sec): 28800, Working directory: '', Network: ''
+2026/08/23 18:20:25 Scanning for dependencies...
+2026/08/23 18:20:26 Successfully scanned dependencies
+2026/08/23 18:20:26 Launching container with name: build
+Sending build context to Docker daemon  252.5MB
+Step 1/15 : FROM python:3.11-slim
+3.11-slim: Pulling from library/python
+26c307b5e35a: Pulling fs layer
+7ce8f1a1db8f: Pulling fs layer
+daff6f8ae2ef: Pulling fs layer
+605d2cb1fe61: Pulling fs layer
+605d2cb1fe61: Waiting
+7ce8f1a1db8f: Verifying Checksum
+7ce8f1a1db8f: Download complete
+daff6f8ae2ef: Verifying Checksum
+daff6f8ae2ef: Download complete
+605d2cb1fe61: Verifying Checksum
+605d2cb1fe61: Download complete
+26c307b5e35a: Verifying Checksum
+26c307b5e35a: Download complete
+26c307b5e35a: Pull complete
+7ce8f1a1db8f: Pull complete
+daff6f8ae2ef: Pull complete
+605d2cb1fe61: Pull complete
+Digest: sha256:9c900dea9e8fb7e16277c179b555cc72d29a352dbc33cff48ad5a0412fd5bfc7
+Status: Downloaded newer image for python:3.11-slim
+ ---> 002792ac1935
+Step 2/15 : ENV PYTHONDONTWRITEBYTECODE=1     PYTHONUNBUFFERED=1
+ ---> Running in 20eb5ba732b4
+Removing intermediate container 20eb5ba732b4
+ ---> 291176e9720b
+Step 3/15 : WORKDIR /app
+ ---> Running in d1af1d4c6f54
+Removing intermediate container d1af1d4c6f54
+ ---> ab07288cde5e
+Step 4/15 : COPY ["Sprint 3/01_cloud/app_mysql/requirements.txt", "/app/requirements.txt"]
+ ---> dc34af29ccd0
+Step 5/15 : RUN pip install --no-cache-dir -r /app/requirements.txt
+ ---> Running in 56682fce64fc
+Collecting fastapi==0.140.8 (from -r /app/requirements.txt (line 1))
+  Downloading fastapi-0.140.8-py3-none-any.whl.metadata (27 kB)
+Collecting uvicorn==0.52.4 (from uvicorn[standard]==0.52.4->-r /app/requirements.txt (line 2))
+  Downloading uvicorn-0.52.4-py3-none-any.whl.metadata (6.6 kB)
+Collecting mysql-connector-python==9.7.0 (from -r /app/requirements.txt (line 3))
+  Downloading mysql_connector_python-9.7.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (11 kB)
+Collecting pydantic==2.13.4 (from -r /app/requirements.txt (line 4))
+  Downloading pydantic-2.13.4-py3-none-any.whl.metadata (109 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.4/109.4 kB 15.9 MB/s eta 0:00:00
+Collecting azure-monitor-opentelemetry==1.8.9 (from -r /app/requirements.txt (line 5))
+  Downloading azure_monitor_opentelemetry-1.8.9-py3-none-any.whl.metadata (25 kB)
+Collecting starlette>=0.46.0 (from fastapi==0.140.8->-r /app/requirements.txt (line 1))
+  Downloading starlette-1.6.0-py3-none-any.whl.metadata (6.4 kB)
+Collecting typing-extensions>=4.8.0 (from fastapi==0.140.8->-r /app/requirements.txt (line 1))
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting typing-inspection>=0.4.2 (from fastapi==0.140.8->-r /app/requirements.txt (line 1))
+  Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+Collecting annotated-doc>=0.0.2 (from fastapi==0.140.8->-r /app/requirements.txt (line 1))
+  Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+Collecting click>=7.0 (from uvicorn==0.52.4->uvicorn[standard]==0.52.4->-r /app/requirements.txt (line 2))
+  Downloading click-8.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting h11>=0.8 (from uvicorn==0.52.4->uvicorn[standard]==0.52.4->-r /app/requirements.txt (line 2))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting annotated-types>=0.6.0 (from pydantic==2.13.4->-r /app/requirements.txt (line 4))
+  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.46.4 (from pydantic==2.13.4->-r /app/requirements.txt (line 4))
+  Downloading pydantic_core-2.46.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+Collecting azure-core<2.0.0,>=1.28.0 (from azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading azure_core-1.41.0-py3-none-any.whl.metadata (49 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.0/50.0 kB 217.2 MB/s eta 0:00:00
+Collecting azure-core-tracing-opentelemetry~=1.0.0b11 (from azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading azure_core_tracing_opentelemetry-1.0.0b13-py3-none-any.whl.metadata (11 kB)
+Collecting azure-monitor-opentelemetry-exporter~=1.0.0b54 (from azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading azure_monitor_opentelemetry_exporter-1.0.0b56-py2.py3-none-any.whl.metadata (33 kB)
+Collecting opentelemetry-sdk~=1.43.0 (from azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_sdk-1.43.0-py3-none-any.whl.metadata (1.7 kB)
+Collecting opentelemetry-instrumentation-django<0.65.0,>=0.64b0 (from azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_instrumentation_django-0.64b0-py3-none-any.whl.metadata (2.3 kB)
+Collecting opentelemetry-instrumentation-fastapi<0.65.0,>=0.64b0 (from azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_instrumentation_fastapi-0.64b0-py3-none-any.whl.metadata (2.2 kB)
+Collecting opentelemetry-instrumentation-flask<0.65.0,>=0.64b0 (from azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_instrumentation_flask-0.64b0-py3-none-any.whl.metadata (2.2 kB)
+Collecting opentelemetry-instrumentation-psycopg2<0.65.0,>=0.64b0 (from azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_instrumentation_psycopg2-0.64b0-py3-none-any.whl.metadata (2.1 kB)
+Collecting opentelemetry-instrumentation-requests<0.65.0,>=0.64b0 (from azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_instrumentation_requests-0.64b0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-instrumentation-urllib<0.65.0,>=0.64b0 (from azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_instrumentation_urllib-0.64b0-py3-none-any.whl.metadata (3.4 kB)
+Collecting opentelemetry-instrumentation-urllib3<0.65.0,>=0.64b0 (from azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_instrumentation_urllib3-0.64b0-py3-none-any.whl.metadata (4.2 kB)
+Collecting opentelemetry-instrumentation-logging<0.65.0,>=0.64b0 (from azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_instrumentation_logging-0.64b0-py3-none-any.whl.metadata (1.9 kB)
+Collecting opentelemetry-resource-detector-azure<1.0.0,>=0.1.5 (from azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_resource_detector_azure-0.2.0-py3-none-any.whl.metadata (5.6 kB)
+Collecting httptools>=0.8.0 (from uvicorn[standard]==0.52.4->-r /app/requirements.txt (line 2))
+  Downloading httptools-0.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (3.5 kB)
+Collecting python-dotenv>=0.13 (from uvicorn[standard]==0.52.4->-r /app/requirements.txt (line 2))
+  Downloading python_dotenv-1.2.3-py3-none-any.whl.metadata (29 kB)
+Collecting pyyaml>=5.1 (from uvicorn[standard]==0.52.4->-r /app/requirements.txt (line 2))
+  Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting uvloop>=0.15.1 (from uvicorn[standard]==0.52.4->-r /app/requirements.txt (line 2))
+  Downloading uvloop-0.22.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.9 kB)
+Collecting watchfiles>=0.20 (from uvicorn[standard]==0.52.4->-r /app/requirements.txt (line 2))
+  Downloading watchfiles-1.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+Collecting websockets>=13.0 (from uvicorn[standard]==0.52.4->-r /app/requirements.txt (line 2))
+  Downloading websockets-17.0.1-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.3 kB)
+Collecting requests>=2.21.0 (from azure-core<2.0.0,>=1.28.0->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting opentelemetry-api>=1.12.0 (from azure-core-tracing-opentelemetry~=1.0.0b11->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_api-1.44.0-py3-none-any.whl.metadata (1.4 kB)
+Collecting azure-identity~=1.17 (from azure-monitor-opentelemetry-exporter~=1.0.0b54->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading azure_identity-1.25.3-py3-none-any.whl.metadata (91 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.7/91.7 kB 323.4 MB/s eta 0:00:00
+Collecting msrest>=0.6.10 (from azure-monitor-opentelemetry-exporter~=1.0.0b54->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading msrest-0.7.1-py3-none-any.whl.metadata (21 kB)
+Collecting opentelemetry-api>=1.12.0 (from azure-core-tracing-opentelemetry~=1.0.0b11->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_api-1.43.0-py3-none-any.whl.metadata (1.4 kB)
+Collecting psutil<8,>=5.9 (from azure-monitor-opentelemetry-exporter~=1.0.0b54->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+Collecting opentelemetry-instrumentation-wsgi==0.64b0 (from opentelemetry-instrumentation-django<0.65.0,>=0.64b0->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_instrumentation_wsgi-0.64b0-py3-none-any.whl.metadata (2.1 kB)
+Collecting opentelemetry-instrumentation==0.64b0 (from opentelemetry-instrumentation-django<0.65.0,>=0.64b0->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_instrumentation-0.64b0-py3-none-any.whl.metadata (7.2 kB)
+Collecting opentelemetry-semantic-conventions==0.64b0 (from opentelemetry-instrumentation-django<0.65.0,>=0.64b0->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_semantic_conventions-0.64b0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-util-http==0.64b0 (from opentelemetry-instrumentation-django<0.65.0,>=0.64b0->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_util_http-0.64b0-py3-none-any.whl.metadata (2.6 kB)
+Requirement already satisfied: packaging>=18.0 in /usr/local/lib/python3.11/site-packages (from opentelemetry-instrumentation==0.64b0->opentelemetry-instrumentation-django<0.65.0,>=0.64b0->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5)) (26.3)
+Collecting wrapt<3.0.0,>=1.0.0 (from opentelemetry-instrumentation==0.64b0->opentelemetry-instrumentation-django<0.65.0,>=0.64b0->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading wrapt-2.3.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (7.4 kB)
+Collecting opentelemetry-instrumentation-asgi==0.64b0 (from opentelemetry-instrumentation-fastapi<0.65.0,>=0.64b0->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_instrumentation_asgi-0.64b0-py3-none-any.whl.metadata (2.0 kB)
+Collecting asgiref~=3.0 (from opentelemetry-instrumentation-asgi==0.64b0->opentelemetry-instrumentation-fastapi<0.65.0,>=0.64b0->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading asgiref-3.12.1-py3-none-any.whl.metadata (9.4 kB)
+Collecting opentelemetry-instrumentation-dbapi==0.64b0 (from opentelemetry-instrumentation-psycopg2<0.65.0,>=0.64b0->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading opentelemetry_instrumentation_dbapi-0.64b0-py3-none-any.whl.metadata (2.0 kB)
+Collecting anyio<5,>=3.6.2 (from starlette>=0.46.0->fastapi==0.140.8->-r /app/requirements.txt (line 1))
+  Downloading anyio-4.14.2-py3-none-any.whl.metadata (4.6 kB)
+Collecting idna>=2.8 (from anyio<5,>=3.6.2->starlette>=0.46.0->fastapi==0.140.8->-r /app/requirements.txt (line 1))
+  Downloading idna-3.19-py3-none-any.whl.metadata (9.2 kB)
+Collecting cryptography>=2.5 (from azure-identity~=1.17->azure-monitor-opentelemetry-exporter~=1.0.0b54->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading cryptography-50.0.0-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.3 kB)
+Collecting msal>=1.35.1 (from azure-identity~=1.17->azure-monitor-opentelemetry-exporter~=1.0.0b54->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading msal-1.37.0-py3-none-any.whl.metadata (11 kB)
+Collecting msal-extensions>=1.2.0 (from azure-identity~=1.17->azure-monitor-opentelemetry-exporter~=1.0.0b54->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading msal_extensions-1.3.1-py3-none-any.whl.metadata (7.8 kB)
+Collecting certifi>=2017.4.17 (from msrest>=0.6.10->azure-monitor-opentelemetry-exporter~=1.0.0b54->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Collecting isodate>=0.6.0 (from msrest>=0.6.10->azure-monitor-opentelemetry-exporter~=1.0.0b54->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading isodate-0.7.2-py3-none-any.whl.metadata (11 kB)
+Collecting requests-oauthlib>=0.5.0 (from msrest>=0.6.10->azure-monitor-opentelemetry-exporter~=1.0.0b54->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl.metadata (11 kB)
+Collecting charset_normalizer<4,>=2 (from requests>=2.21.0->azure-core<2.0.0,>=1.28.0->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading charset_normalizer-3.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (45 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.9/45.9 kB 216.4 MB/s eta 0:00:00
+Collecting urllib3<3,>=1.26 (from requests>=2.21.0->azure-core<2.0.0,>=1.28.0->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)
+Collecting cffi>=2.0.0 (from cryptography>=2.5->azure-identity~=1.17->azure-monitor-opentelemetry-exporter~=1.0.0b54->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading cffi-2.1.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+Collecting PyJWT<3,>=1.0.0 (from PyJWT[crypto]<3,>=1.0.0->msal>=1.35.1->azure-identity~=1.17->azure-monitor-opentelemetry-exporter~=1.0.0b54->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading pyjwt-2.13.0-py3-none-any.whl.metadata (3.4 kB)
+Collecting oauthlib>=3.0.0 (from requests-oauthlib>=0.5.0->msrest>=0.6.10->azure-monitor-opentelemetry-exporter~=1.0.0b54->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading oauthlib-3.3.1-py3-none-any.whl.metadata (7.9 kB)
+Collecting pycparser (from cffi>=2.0.0->cryptography>=2.5->azure-identity~=1.17->azure-monitor-opentelemetry-exporter~=1.0.0b54->azure-monitor-opentelemetry==1.8.9->-r /app/requirements.txt (line 5))
+  Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Downloading fastapi-0.140.8-py3-none-any.whl (131 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.1/131.1 kB 231.9 MB/s eta 0:00:00
+Downloading uvicorn-0.52.4-py3-none-any.whl (79 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.9/79.9 kB 278.7 MB/s eta 0:00:00
+Downloading mysql_connector_python-9.7.0-cp311-cp311-manylinux_2_28_x86_64.whl (21.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 21.7/21.7 MB 340.9 MB/s eta 0:00:00
+Downloading pydantic-2.13.4-py3-none-any.whl (472 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 472.3/472.3 kB 450.3 MB/s eta 0:00:00
+Downloading azure_monitor_opentelemetry-1.8.9-py3-none-any.whl (42 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.7/42.7 kB 326.5 MB/s eta 0:00:00
+Downloading pydantic_core-2.46.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 396.5 MB/s eta 0:00:00
+Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading azure_core-1.41.0-py3-none-any.whl (220 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 220.9/220.9 kB 418.0 MB/s eta 0:00:00
+Downloading azure_core_tracing_opentelemetry-1.0.0b13-py3-none-any.whl (12 kB)
+Downloading azure_monitor_opentelemetry_exporter-1.0.0b56-py2.py3-none-any.whl (255 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 255.0/255.0 kB 485.9 MB/s eta 0:00:00
+Downloading click-8.4.2-py3-none-any.whl (119 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 119.2/119.2 kB 325.4 MB/s eta 0:00:00
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading httptools-0.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (464 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 464.7/464.7 kB 429.5 MB/s eta 0:00:00
+Downloading opentelemetry_instrumentation_django-0.64b0-py3-none-any.whl (18 kB)
+Downloading opentelemetry_instrumentation-0.64b0-py3-none-any.whl (35 kB)
+Downloading opentelemetry_instrumentation_wsgi-0.64b0-py3-none-any.whl (13 kB)
+Downloading opentelemetry_semantic_conventions-0.64b0-py3-none-any.whl (203 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 203.7/203.7 kB 429.9 MB/s eta 0:00:00
+Downloading opentelemetry_api-1.43.0-py3-none-any.whl (61 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.9/61.9 kB 272.5 MB/s eta 0:00:00
+Downloading opentelemetry_util_http-0.64b0-py3-none-any.whl (8.2 kB)
+Downloading opentelemetry_instrumentation_fastapi-0.64b0-py3-none-any.whl (13 kB)
+Downloading opentelemetry_instrumentation_asgi-0.64b0-py3-none-any.whl (15 kB)
+Downloading opentelemetry_instrumentation_flask-0.64b0-py3-none-any.whl (15 kB)
+Downloading opentelemetry_instrumentation_logging-0.64b0-py3-none-any.whl (16 kB)
+Downloading opentelemetry_instrumentation_psycopg2-0.64b0-py3-none-any.whl (10 kB)
+Downloading opentelemetry_instrumentation_dbapi-0.64b0-py3-none-any.whl (14 kB)
+Downloading opentelemetry_instrumentation_requests-0.64b0-py3-none-any.whl (13 kB)
+Downloading opentelemetry_instrumentation_urllib-0.64b0-py3-none-any.whl (13 kB)
+Downloading opentelemetry_instrumentation_urllib3-0.64b0-py3-none-any.whl (13 kB)
+Downloading opentelemetry_resource_detector_azure-0.2.0-py3-none-any.whl (12 kB)
+Downloading opentelemetry_sdk-1.43.0-py3-none-any.whl (178 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 178.9/178.9 kB 339.2 MB/s eta 0:00:00
+Downloading python_dotenv-1.2.3-py3-none-any.whl (22 kB)
+Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 391.3 MB/s eta 0:00:00
+Downloading starlette-1.6.0-py3-none-any.whl (75 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 76.0/76.0 kB 285.0 MB/s eta 0:00:00
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 284.6 MB/s eta 0:00:00
+Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Downloading uvloop-0.22.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 372.9 MB/s eta 0:00:00
+Downloading watchfiles-1.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (456 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 456.9/456.9 kB 504.2 MB/s eta 0:00:00
+Downloading websockets-17.0.1-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (219 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 219.9/219.9 kB 437.2 MB/s eta 0:00:00
+Downloading anyio-4.14.2-py3-none-any.whl (125 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.8/125.8 kB 449.6 MB/s eta 0:00:00
+Downloading azure_identity-1.25.3-py3-none-any.whl (192 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 192.1/192.1 kB 396.2 MB/s eta 0:00:00
+Downloading msrest-0.7.1-py3-none-any.whl (85 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 85.4/85.4 kB 300.0 MB/s eta 0:00:00
+Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.6/155.6 kB 447.3 MB/s eta 0:00:00
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.1/73.1 kB 331.4 MB/s eta 0:00:00
+Downloading wrapt-2.3.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (161 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 161.7/161.7 kB 448.6 MB/s eta 0:00:00
+Downloading asgiref-3.12.1-py3-none-any.whl (25 kB)
+Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 137.0/137.0 kB 369.5 MB/s eta 0:00:00
+Downloading charset_normalizer-3.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (262 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 262.3/262.3 kB 467.9 MB/s eta 0:00:00
+Downloading cryptography-50.0.0-cp311-abi3-manylinux_2_34_x86_64.whl (4.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 407.0 MB/s eta 0:00:00
+Downloading idna-3.19-py3-none-any.whl (68 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.5/68.5 kB 181.6 MB/s eta 0:00:00
+Downloading isodate-0.7.2-py3-none-any.whl (22 kB)
+Downloading msal-1.37.0-py3-none-any.whl (123 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 123.7/123.7 kB 328.0 MB/s eta 0:00:00
+Downloading msal_extensions-1.3.1-py3-none-any.whl (20 kB)
+Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
+Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.1/131.1 kB 338.9 MB/s eta 0:00:00
+Downloading cffi-2.1.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (217 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 217.8/217.8 kB 362.9 MB/s eta 0:00:00
+Downloading oauthlib-3.3.1-py3-none-any.whl (160 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 160.1/160.1 kB 324.5 MB/s eta 0:00:00
+Downloading pyjwt-2.13.0-py3-none-any.whl (31 kB)
+Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.2/48.2 kB 273.7 MB/s eta 0:00:00
+Installing collected packages: wrapt, websockets, uvloop, urllib3, typing-extensions, pyyaml, python-dotenv, PyJWT, pycparser, psutil, opentelemetry-util-http, oauthlib, mysql-connector-python, isodate, idna, httptools, h11, click, charset_normalizer, certifi, asgiref, annotated-types, annotated-doc, uvicorn, typing-inspection, requests, pydantic-core, opentelemetry-api, cffi, anyio, watchfiles, starlette, requests-oauthlib, pydantic, opentelemetry-semantic-conventions, cryptography, azure-core, opentelemetry-sdk, opentelemetry-instrumentation, msrest, fastapi, azure-core-tracing-opentelemetry, opentelemetry-resource-detector-azure, opentelemetry-instrumentation-wsgi, opentelemetry-instrumentation-urllib3, opentelemetry-instrumentation-urllib, opentelemetry-instrumentation-requests, opentelemetry-instrumentation-logging, opentelemetry-instrumentation-dbapi, opentelemetry-instrumentation-asgi, msal, opentelemetry-instrumentation-psycopg2, opentelemetry-instrumentation-flask, opentelemetry-instrumentation-fastapi, opentelemetry-instrumentation-django, msal-extensions, azure-identity, azure-monitor-opentelemetry-exporter, azure-monitor-opentelemetry
+Successfully installed PyJWT-2.13.0 annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.14.2 asgiref-3.12.1 azure-core-1.41.0 azure-core-tracing-opentelemetry-1.0.0b13 azure-identity-1.25.3 azure-monitor-opentelemetry-1.8.9 azure-monitor-opentelemetry-exporter-1.0.0b56 certifi-2026.7.22 cffi-2.1.1 charset_normalizer-3.5.1 click-8.4.2 cryptography-50.0.0 fastapi-0.140.8 h11-0.16.0 httptools-0.8.0 idna-3.19 isodate-0.7.2 msal-1.37.0 msal-extensions-1.3.1 msrest-0.7.1 mysql-connector-python-9.7.0 oauthlib-3.3.1 opentelemetry-api-1.43.0 opentelemetry-instrumentation-0.64b0 opentelemetry-instrumentation-asgi-0.64b0 opentelemetry-instrumentation-dbapi-0.64b0 opentelemetry-instrumentation-django-0.64b0 opentelemetry-instrumentation-fastapi-0.64b0 opentelemetry-instrumentation-flask-0.64b0 opentelemetry-instrumentation-logging-0.64b0 opentelemetry-instrumentation-psycopg2-0.64b0 opentelemetry-instrumentation-requests-0.64b0 opentelemetry-instrumentation-urllib-0.64b0 opentelemetry-instrumentation-urllib3-0.64b0 opentelemetry-instrumentation-wsgi-0.64b0 opentelemetry-resource-detector-azure-0.2.0 opentelemetry-sdk-1.43.0 opentelemetry-semantic-conventions-0.64b0 opentelemetry-util-http-0.64b0 psutil-7.2.2 pycparser-3.0 pydantic-2.13.4 pydantic-core-2.46.4 python-dotenv-1.2.3 pyyaml-6.0.3 requests-2.34.2 requests-oauthlib-2.0.0 starlette-1.6.0 typing-extensions-4.16.0 typing-inspection-0.4.4 urllib3-2.7.0 uvicorn-0.52.4 uvloop-0.22.1 watchfiles-1.2.0 websockets-17.0.1 wrapt-2.3.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+
+[notice] A new release of pip is available: 24.0 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
+Removing intermediate container 56682fce64fc
+ ---> 41717f00f733
+Step 6/15 : COPY ["Sprint 3/01_cloud/app_mysql/main.py", "/app/main.py"]
+ ---> afcbc70e445b
+Step 7/15 : COPY ["Sprint 3/01_cloud/app_mysql/schema.sql", "/app/schema.sql"]
+ ---> ca540fea3010
+Step 8/15 : COPY ["locaweb/outputs/previsoes_baseline.json", "/app/outputs/previsoes_baseline.json"]
+ ---> ef1f42a8f41a
+Step 9/15 : COPY ["locaweb/outputs/comparacao_modelos.json", "/app/outputs/comparacao_modelos.json"]
+ ---> e0355dd5a3c0
+Step 10/15 : COPY ["locaweb/outputs/model_registry.json", "/app/outputs/model_registry.json"]
+ ---> 3adf3d36cb90
+Step 11/15 : RUN useradd --create-home --uid 10001 predictfy && chown -R predictfy:predictfy /app
+ ---> Running in 562086abaf96
+Removing intermediate container 562086abaf96
+ ---> cf088aef860f
+Step 12/15 : USER predictfy
+ ---> Running in f0a5b322e87f
+Removing intermediate container f0a5b322e87f
+ ---> 72592b82d8a6
+Step 13/15 : EXPOSE 8080
+ ---> Running in c0c5c6c6d083
+Removing intermediate container c0c5c6c6d083
+ ---> 4d2b1ffd4c94
+Step 14/15 : HEALTHCHECK --interval=30s --timeout=5s --retries=3   CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health')"
+ ---> Running in 7cf4569c87b3
+Removing intermediate container 7cf4569c87b3
+ ---> a756b8144edd
+Step 15/15 : CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
+ ---> Running in 0c1788913941
+Removing intermediate container 0c1788913941
+ ---> 3994b5a47219
+Successfully built 3994b5a47219
+Successfully tagged predictfy260823es.azurecr.io/predictfy-mysql-bridge:sprint3
+2026/08/23 18:20:58 Successfully executed container: build
+2026/08/23 18:20:58 Executing step ID: push. Timeout(sec): 3600, Working directory: '', Network: ''
+2026/08/23 18:20:58 Pushing image: predictfy260823es.azurecr.io/predictfy-mysql-bridge:sprint3, attempt 1
+The push refers to repository [predictfy260823es.azurecr.io/predictfy-mysql-bridge]
+d82aef216a12: Preparing
+89067f1942d7: Preparing
+c110b59e03c6: Preparing
+7061a01f67af: Preparing
+6cf0bdf8e0d8: Preparing
+252ddb5f3c76: Preparing
+6cd3c2772eae: Preparing
+682fb9b00e79: Preparing
+8d9403cd0767: Preparing
+1a8800d1b976: Preparing
+3d7dddf62be3: Preparing
+275f0a9e4758: Preparing
+6f9432833129: Preparing
+252ddb5f3c76: Waiting
+6cd3c2772eae: Waiting
+682fb9b00e79: Waiting
+8d9403cd0767: Waiting
+1a8800d1b976: Waiting
+3d7dddf62be3: Waiting
+275f0a9e4758: Waiting
+6f9432833129: Waiting
+c110b59e03c6: Pushed
+89067f1942d7: Pushed
+7061a01f67af: Pushed
+d82aef216a12: Pushed
+6cf0bdf8e0d8: Pushed
+252ddb5f3c76: Pushed
+8d9403cd0767: Pushed
+682fb9b00e79: Pushed
+1a8800d1b976: Pushed
+275f0a9e4758: Pushed
+3d7dddf62be3: Pushed
+6f9432833129: Pushed
+6cd3c2772eae: Pushed
+sprint3: digest: sha256:f48bd70a0d63654ecea898eec999c772438f80ffc1abbd9b33cc36d0689c9fbe size: 3032
+2026/08/23 18:21:08 Successfully pushed image: predictfy260823es.azurecr.io/predictfy-mysql-bridge:sprint3
+2026/08/23 18:21:08 Step ID: build marked as successful (elapsed time in seconds: 32.442942)
+2026/08/23 18:21:08 Populating digests for step ID: build...
+2026/08/23 18:21:09 Successfully populated digests for step ID: build
+2026/08/23 18:21:09 Step ID: push marked as successful (elapsed time in seconds: 10.337421)
+2026/08/23 18:21:09 The following dependencies were found:
+2026/08/23 18:21:09 
+- image:
+    registry: predictfy260823es.azurecr.io
+    repository: predictfy-mysql-bridge
+    tag: sprint3
+    digest: sha256:f48bd70a0d63654ecea898eec999c772438f80ffc1abbd9b33cc36d0689c9fbe
+  runtime-dependency:
+    registry: registry.hub.docker.com
+    repository: library/python
+    tag: 3.11-slim
+    digest: sha256:9c900dea9e8fb7e16277c179b555cc72d29a352dbc33cff48ad5a0412fd5bfc7
+  git: {}
+
+
+Run ID: ch2 was successful after 49s
+[2/4] Substituição controlada do bridge com mesmo nome
+[3/4] Deploy do bridge
+Name                        ResourceGroup                  Status    Image                                                        IP:ports           Network    CPU/Memory       OsType    Location
+--------------------------  -----------------------------  --------  -----------------------------------------------------------  -----------------  ---------  ---------------  --------  ----------
+aci-predictfy-mysql-bridge  rg-predictfy-sprint3-260823es  Running   predictfy260823es.azurecr.io/predictfy-mysql-bridge:sprint3  20.96.209.32:8080  Public     1.0 core/1.5 gb  Linux     eastus2
+[4/4] Endpoint do bridge
+Bridge: http://predictfy-bridge-260823es.eastus2.azurecontainer.io:8080/health

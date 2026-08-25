@@ -1,0 +1,7 @@
+Evidência de descarte da infraestrutura efêmera
+Coletado em UTC: 2026-08-24T00:26:35Z
+Comando: az group exists --name rg-predictfy-dw-sprint3-260823es
+Resultado: false
+
+O Resource Group foi removido depois das capturas reais do Terminal, Azure Portal,
+ADF Studio e ADF Monitor. Nenhuma credencial foi gravada nas evidências.

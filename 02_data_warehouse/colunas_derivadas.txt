@@ -1,0 +1,23 @@
+# Expressões do Mapping Data Flow — df_incidentes_predictfy
+# Sintaxe: nome_coluna = expressão ADF
+
+incident_feature_id = sha2(256, concat('PREDICTFY_INCIDENTS_FEATURES_V1|', toString(source_row_number)))
+prioridade_codigo = iif(toInteger(prioridade_bin) == 1, 'P2', 'P3')
+periodo_dia_desc = case(toInteger(hora) < 6, 'MADRUGADA', toInteger(hora) < 12, 'MANHA', toInteger(hora) < 18, 'TARDE', 'NOITE')
+ocorrencia_ola = iif(toInteger(target_ola) == 1, 'VIOLADO', 'ATENDIDO')
+media_movel_delta = round(toDecimal(rolling_7d) - toDecimal(rolling_30d), 4)
+tendencia_volume = case(media_movel_delta > 2, 'ALTA', media_movel_delta < -2, 'BAIXA', 'ESTAVEL')
+contexto_calendario = iif(toInteger(is_feriado) == 1, 'FERIADO', iif(toInteger(is_fim_de_semana) == 1, 'FIM_SEMANA', 'DIA_UTIL'))
+data_processamento_utc = currentUTC()
+origem_dado = 'PREDICTFY_INCIDENTS_FEATURES_V1'
+arquivo_origem = 'incidentes_predictfy.csv'
+
+# Enriquecimento por join com regras_ola.txt
+ola_limite_horas = toInteger(ola_limite_horas_regra)
+prioridade_desc = prioridade_desc_regra
+
+# Limpeza/filtro aplicado antes das derivações
+valid_record = !isNull(toInteger(hora)) && between(toInteger(hora), 0, 23) && !isNull(toInteger(target_ola)) && (toInteger(target_ola) == 0 || toInteger(target_ola) == 1) && !isNull(toDecimal(rolling_7d)) && !isNull(toDecimal(rolling_30d))
+
+# Otimização validada para o sink MySQL
+# batchSize = 10000; hash partitioning = 8 por incident_feature_id

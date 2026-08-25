@@ -1,0 +1,13 @@
+INFO:     Started server process [18]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[startup] Modelos disponíveis em outputs/: ['previsoes_volume', 'previsoes_volume_mc', 'previsoes_lstm', 'previsoes_baseline', 'previsoes_horizonte_prophet', 'risco_ola', 'clusters', 'kpi_atingimento', 'comparacao_modelos', 'segmentos_ola']
+INFO:     10.92.0.11:49549 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     10.92.0.11:51736 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     10.92.0.10:55406 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     10.92.0.10:55491 - "GET / HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     10.92.0.11:52541 - "POST /mcp HTTP/1.1" 404 Not Found
+

@@ -1,0 +1,54 @@
+{
+  "activities": [
+    {
+      "additionalProperties": null,
+      "compute": {
+        "computeType": "General",
+        "coreCount": 8
+      },
+      "continuationSettings": null,
+      "continueOnError": null,
+      "dataFlow": null,
+      "dependsOn": [],
+      "description": null,
+      "integrationRuntime": null,
+      "linkedServiceName": null,
+      "name": "ExecutarDataFlowIncidentes",
+      "onInactiveMarkAs": null,
+      "policy": {
+        "additionalProperties": null,
+        "retry": 1,
+        "retryIntervalInSeconds": 30,
+        "secureInput": false,
+        "secureOutput": false,
+        "timeout": "0.12:00:00"
+      },
+      "runConcurrently": null,
+      "sourceStagingConcurrency": null,
+      "staging": null,
+      "state": null,
+      "traceLevel": "Fine",
+      "type": "ExecuteDataFlow",
+      "userProperties": null
+    }
+  ],
+  "additionalProperties": null,
+  "annotations": [
+    "Sprint3",
+    "Predictfy",
+    "DataWarehouse",
+    "MySQLEfemeroDW"
+  ],
+  "concurrency": null,
+  "description": "Orquestra a limpeza e a carga dos incidentes Predictfy em Azure Database for MySQL e TXT.",
+  "etag": "eb02176c-0000-0200-0000-6a8b83b60000",
+  "folder": null,
+  "id": "/subscriptions/cd05e955-d546-4417-8a15-9e4b6bc58902/resourceGroups/rg-predictfy-dw-sprint3-260823es/providers/Microsoft.DataFactory/factories/adf-predictfy-dw-260823es/pipelines/pl_ingestao_incidentes_predictfy",
+  "name": "pl_ingestao_incidentes_predictfy",
+  "parameters": null,
+  "policy": null,
+  "resourceGroup": "rg-predictfy-dw-sprint3-260823es",
+  "runDimensions": null,
+  "type": "Microsoft.DataFactory/factories/pipelines",
+  "variables": null
+}

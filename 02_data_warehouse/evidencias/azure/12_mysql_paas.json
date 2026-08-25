@@ -1,0 +1,12 @@
+{
+  "backupRetentionDays": 1,
+  "fqdn": "[OCULTO POR SEGURANÇA]",
+  "location": "Chile Central",
+  "name": "mysql-predictfy-dw-260823es",
+  "publicNetworkAccess": "Enabled",
+  "sku": "Standard_B2s",
+  "state": "Ready",
+  "storageGB": 32,
+  "tier": "Burstable",
+  "version": "8.0.21"
+}

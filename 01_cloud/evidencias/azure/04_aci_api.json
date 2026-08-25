@@ -1,0 +1,9 @@
+{
+  "CPU": 1.0,
+  "Estado": "Running",
+  "FQDN": "predictfy-api-260819es.eastus2.azurecontainer.io",
+  "IP": "172.193.35.3",
+  "Imagem": "predictfy260819es.azurecr.io/predictfy-api:sprint3",
+  "MemoriaGB": 2.0,
+  "Nome": "aci-predictfy-api"
+}

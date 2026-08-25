@@ -1,0 +1,19 @@
+{
+  "modelo": "ann_ola_risk",
+  "versao": "sprint3-shadow-v2",
+  "arquitetura": {
+    "hidden": [
+      64,
+      32
+    ],
+    "dropout": 0.2
+  },
+  "seeds": [
+    11,
+    42,
+    101
+  ],
+  "input_size": 349,
+  "threshold_capacidade_top5": 0.47048258781433105,
+  "cluster_como_feature": false
+}

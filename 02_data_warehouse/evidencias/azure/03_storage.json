@@ -1,0 +1,12 @@
+{
+  "httpsOnly": true,
+  "kind": "StorageV2",
+  "location": "eastus2",
+  "name": "pfdw260823es",
+  "primaryEndpoints": {
+    "blob": "https://pfdw260823es.blob.core.windows.net/"
+  },
+  "provisioningState": "Succeeded",
+  "sku": "Standard_LRS",
+  "tls": "TLS1_2"
+}

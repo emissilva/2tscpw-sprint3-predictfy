@@ -1,0 +1,26 @@
+[
+  {
+    "kind": null,
+    "location": "eastus2",
+    "name": "adf-predictfy-dw-260823es",
+    "provisioningState": null,
+    "sku": null,
+    "type": "Microsoft.DataFactory/factories"
+  },
+  {
+    "kind": null,
+    "location": "chilecentral",
+    "name": "mysql-predictfy-dw-260823es",
+    "provisioningState": null,
+    "sku": "Standard_B2s",
+    "type": "Microsoft.DBforMySQL/flexibleServers"
+  },
+  {
+    "kind": "StorageV2",
+    "location": "eastus2",
+    "name": "pfdw260823es",
+    "provisioningState": null,
+    "sku": "Standard_LRS",
+    "type": "Microsoft.Storage/storageAccounts"
+  }
+]

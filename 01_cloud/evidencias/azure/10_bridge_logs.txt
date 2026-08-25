@@ -1,0 +1,12 @@
+INFO:     Started server process [19]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+INFO:     10.92.0.4:52661 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.92.0.4:52666 - "POST /executions/capture HTTP/1.1" 200 OK
+INFO:     10.92.0.4:52671 - "GET /executions?limit=10 HTTP/1.1" 200 OK
+INFO:     10.92.0.6:61164 - "GET /executions/summary HTTP/1.1" 200 OK
+INFO:     10.92.0.6:62011 - "GET /executions HTTP/1.1" 401 Unauthorized
+INFO:     10.92.0.6:59297 - "GET /SDK/webLanguage HTTP/1.1" 404 Not Found
+INFO:     10.92.0.4:49399 - "GET / HTTP/1.0" 404 Not Found
+

@@ -1,0 +1,21 @@
+{
+  "name": "pl_ingestao_incidentes_predictfy",
+  "properties": {
+    "description": "Orquestra a limpeza e a carga dos incidentes Predictfy em Azure Database for MySQL e TXT.",
+    "activities": [{
+      "name": "ExecutarDataFlowIncidentes",
+      "type": "ExecuteDataFlow",
+      "dependsOn": [],
+      "policy": {"timeout": "0.12:00:00", "retry": 1, "retryIntervalInSeconds": 30, "secureOutput": false, "secureInput": false},
+      "typeProperties": {
+          "dataflow": {
+            "referenceName": "df_incidentes_predictfy",
+            "type": "DataFlowReference"
+        },
+        "compute": {"coreCount": 8, "computeType": "General"},
+        "traceLevel": "Fine"
+      }
+    }],
+    "annotations": ["Sprint3", "Predictfy", "DataWarehouse", "MySQLEfemeroDW"]
+  }
+}

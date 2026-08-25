@@ -1,0 +1,12 @@
+{
+  "name": "ds_txt_incidentes_curated",
+  "properties": {
+    "linkedServiceName": {"referenceName": "ls_blob_predictfy", "type": "LinkedServiceReference"},
+    "type": "DelimitedText",
+    "typeProperties": {
+      "location": {"type": "AzureBlobStorageLocation", "container": "curated", "folderPath": "incidentes_predictfy"},
+      "columnDelimiter": "|", "escapeChar": "\\", "firstRowAsHeader": true, "quoteChar": "\"", "fileExtension": ".txt"
+    },
+    "schema": []
+  }
+}

@@ -1,0 +1,6 @@
+Data da execução: 23/08/2026
+Resource Group: rg-predictfy-sprint3-260823es
+Comando: bash 'Sprint 3/01_cloud/iac/99_destroy.sh'
+Resultado do script: CONFIRMADO: Resource Group removido e recursos encerrados.
+Verificação independente: az group exists --name rg-predictfy-sprint3-260823es
+Retorno: false

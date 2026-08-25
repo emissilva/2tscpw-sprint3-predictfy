@@ -1,0 +1,20 @@
+[
+  {
+    "runId": "969b6aed-6d90-45df-b5d2-6143c30a43a0",
+    "pipelineName": "pl_ingestao_incidentes_predictfy",
+    "status": "Succeeded",
+    "runStart": "2026-08-23T23:38:38.748078+00:00",
+    "runEnd": "2026-08-23T23:56:44.844878+00:00",
+    "durationInMs": 1086096,
+    "message": ""
+  },
+  {
+    "runId": "a38d5e24-0bbf-4e1c-8708-ac15f8667c46",
+    "pipelineName": "pl_ingestao_incidentes_predictfy",
+    "status": "Succeeded",
+    "runStart": "2026-08-23T23:57:48.219551+00:00",
+    "runEnd": "2026-08-24T00:15:34.079827+00:00",
+    "durationInMs": 1065860,
+    "message": ""
+  }
+]

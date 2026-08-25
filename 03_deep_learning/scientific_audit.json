@@ -1,0 +1,26 @@
+{
+  "calendar_complete": true,
+  "splits_disjoint_ordered": true,
+  "training_labels_known_before_cutoff": true,
+  "model_validation_labels_known_before_cutoff": true,
+  "threshold_labels_known_before_cutoff": true,
+  "backtest_labels_known_before_cutoff": true,
+  "forbidden_features_absent": true,
+  "preprocessors_fit_on_train_only": true,
+  "cluster_fit_on_train_only": true,
+  "architecture_selected_before_threshold_and_backtest": true,
+  "threshold_selected_before_backtest": true,
+  "feature_ablation_uses_pre_july_folds": true,
+  "optimized_threshold_uses_september_only": true,
+  "q4_excluded_from_optimization": true,
+  "engineered_volumes_end_at_d_minus_1": true,
+  "rare_class_strategies_use_pre_july_folds": true,
+  "synthetic_oversampling_absent": true,
+  "three_seed_evaluation": true,
+  "artifact_files": [
+    "ann_ensemble.pt",
+    "manifest.json",
+    "preprocessor.pkl",
+    "xgboost_pareado.pkl"
+  ]
+}

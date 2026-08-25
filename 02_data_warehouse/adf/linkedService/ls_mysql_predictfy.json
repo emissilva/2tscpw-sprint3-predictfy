@@ -1,0 +1,10 @@
+{
+  "name": "ls_mysql_predictfy",
+  "properties": {
+    "annotations": ["Sprint3", "Predictfy", "MySQLEfemeroDW", "SegredoForaDoGit"],
+    "type": "AzureMySql",
+    "typeProperties": {
+      "connectionString": {"type": "SecureString", "value": "__INJECTED_AT_PUBLISH__"}
+    }
+  }
+}

@@ -1,0 +1,170 @@
+[
+  {
+    "ContainerGroup_s": "aci-predictfy-api",
+    "Message": "INFO:     10.92.0.11:52541 - \"POST /mcp HTTP/1.1\" 404 Not Found",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:33:29.8880989Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-api",
+    "Message": "WARNING:  Invalid HTTP request received.",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:33:15.0078862Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-api",
+    "Message": "INFO:     10.92.0.10:55491 - \"GET / HTTP/1.1\" 404 Not Found",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:33:11.281707Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-api",
+    "Message": "WARNING:  Invalid HTTP request received.",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:33:07.7374702Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-api",
+    "Message": "INFO:     10.92.0.10:55406 - \"GET / HTTP/1.1\" 404 Not Found",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:32:57.2173699Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-mysql-bridge",
+    "Message": "INFO:     10.92.0.19:54149 - \"POST /executions/capture HTTP/1.1\" 200 OK",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:32:49.6408266Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-mysql-bridge",
+    "Message": "INFO:     10.92.0.21:54185 - \"GET /executions/summary HTTP/1.1\" 200 OK",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:32:02.5047277Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-mysql-bridge",
+    "Message": "INFO:     10.92.0.19:53962 - \"GET /executions?limit=2 HTTP/1.1\" 200 OK",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:32:01.2164884Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-mysql-bridge",
+    "Message": "INFO:     10.92.0.21:54178 - \"POST /executions/capture HTTP/1.1\" 200 OK",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:31:59.8605434Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-mysql-bridge",
+    "Message": "INFO:     10.92.0.19:53758 - \"GET /executions/summary HTTP/1.1\" 401 Unauthorized",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:31:09.4315889Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-mysql-bridge",
+    "Message": "INFO:     10.92.0.21:54005 - \"POST /executions/capture HTTP/1.1\" 422 Unprocessable Entity",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:31:09.1377121Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-mysql-bridge",
+    "Message": "INFO:     10.92.0.19:53621 - \"GET /health HTTP/1.1\" 200 OK",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:30:31.639908Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-api",
+    "Message": "INFO:     10.92.0.11:51736 - \"GET /api/health HTTP/1.1\" 200 OK",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:30:30.2426295Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-mysql-bridge",
+    "Message": "INFO:     10.92.0.19:51968 - \"GET /executions HTTP/1.1\" 401 Unauthorized",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:23:00.2634787Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-mysql-bridge",
+    "Message": "INFO:     10.92.0.21:52145 - \"GET /executions/summary HTTP/1.1\" 200 OK",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:22:32.8623962Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-mysql-bridge",
+    "Message": "INFO:     10.92.0.21:52141 - \"GET /executions?limit=10 HTTP/1.1\" 200 OK",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:22:31.5036859Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-mysql-bridge",
+    "Message": "INFO:     10.92.0.21:52133 - \"POST /executions/capture HTTP/1.1\" 200 OK",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:22:30.1368141Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-mysql-bridge",
+    "Message": "INFO:     10.92.0.21:52127 - \"GET /health HTTP/1.1\" 200 OK",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:22:28.6323119Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-api",
+    "Message": "INFO:     10.92.0.11:49549 - \"GET /api/health HTTP/1.1\" 200 OK",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:22:24.3451854Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-api",
+    "Message": "[startup] Modelos disponíveis em outputs/: ['previsoes_volume', 'previsoes_volume_mc', 'previsoes_lstm', 'previsoes_baseline', 'previsoes_horizonte_prophet', 'risco_ola', 'clusters', 'kpi_atingimento', 'comparacao_modelos', 'segmentos_ola']",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:22:24.3451854Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-mysql-bridge",
+    "Message": "INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:21:50.59282Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-mysql-bridge",
+    "Message": "INFO:     Application startup complete.",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:21:50.5921317Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-mysql-bridge",
+    "Message": "INFO:     Started server process [19]",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:21:49.3742956Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-mysql-bridge",
+    "Message": "INFO:     Waiting for application startup.",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:21:49.3742956Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-api",
+    "Message": "INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:19:28.3010865Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-api",
+    "Message": "INFO:     Application startup complete.",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:19:28.2962152Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-api",
+    "Message": "INFO:     Waiting for application startup.",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:19:28.2953264Z"
+  },
+  {
+    "ContainerGroup_s": "aci-predictfy-api",
+    "Message": "INFO:     Started server process [18]",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-08-23T18:19:28.2953264Z"
+  }
+]

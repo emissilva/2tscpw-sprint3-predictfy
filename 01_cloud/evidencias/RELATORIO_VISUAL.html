@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Locaweb Sprint 3 — Predictfy Cloud</title>
+<style>
+@page { size: A4 landscape; margin: 10mm; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, Arial, sans-serif; color: #172b4d; background: #eef3f8; }
+.page { width: 277mm; min-height: 190mm; margin: 10mm auto; padding: 13mm; background: white; page-break-after: always; position: relative; overflow: hidden; }
+.page:last-child { page-break-after: auto; }
+h1 { font-size: 34px; margin: 0 0 10px; color: #081f45; }
+h2 { font-size: 25px; margin: 0 0 12px; color: #075985; }
+h3 { margin: 10px 0 6px; color: #0f4c81; }
+p, li { font-size: 15px; line-height: 1.42; }
+.eyebrow { color: #0078d4; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
+.hero { background: linear-gradient(135deg,#061a3a,#075985 58%,#00a4ef); color: white; }
+.hero h1 { color: white; font-size: 48px; max-width: 820px; margin-top: 25mm; }
+.hero .eyebrow { color: #8edaff; }
+.hero p { font-size: 20px; max-width: 800px; }
+.footer { position: absolute; bottom: 7mm; left: 13mm; right: 13mm; display: flex; justify-content: space-between; font-size: 11px; color: #63758a; }
+.hero .footer { color: #d7edff; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.card { border: 1px solid #cbd9e6; border-radius: 10px; padding: 12px; background: #f8fbfe; }
+.ok { color: #087443; font-weight: 700; }
+.tag { display: inline-block; border-radius: 99px; padding: 4px 9px; background: #dff2ff; color: #075985; font-size: 12px; font-weight: 700; margin: 2px; }
+.terminal { background: #071525; color: #c7f9cc; border-radius: 9px; padding: 12px 15px; font: 13px/1.42 Menlo, monospace; white-space: pre-wrap; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #075985; color: white; text-align: left; }
+th, td { border: 1px solid #cbd9e6; padding: 7px; vertical-align: top; }
+.arch { display: grid; grid-template-columns: 1fr 2.5fr 1fr; gap: 18px; align-items: center; margin-top: 10px; }
+.box { border: 2px solid #1683c7; border-radius: 10px; padding: 9px; text-align: center; background: #eaf7ff; font-size: 12px; margin: 8px; }
+.azure { border: 3px solid #0078d4; border-radius: 14px; padding: 10px; background: #f5faff; display: grid; grid-template-columns: repeat(3,1fr); }
+.arrow { text-align:center; font-weight:700; color:#0078d4; }
+.metric { font-size: 28px; font-weight: 800; color: #087443; }
+.note { background: #fff7d6; border-left: 5px solid #e0a800; padding: 9px; font-size: 13px; }
+.small { font-size: 12px; color: #5d7085; }
+@media print { body { background: white; } .page { margin: 0; } }
+</style>
+</head>
+<body>
+<section class="page hero" id="capa">
+  <div class="eyebrow">Challenge Locaweb 2026 · Sprint 3</div>
+  <h1>Predictfy AIOps<br>Cloud Solutions &amp; Scalable Infrastructure</h1>
+  <p>Arquitetura Azure reproduzível, containerização, Machine Learning, MySQL e observabilidade — executados e validados com ambiente efêmero de baixo custo.</p>
+  <div class="footer"><span>FIAP · 2TSCP</span><span>Locaweb_Sprint3_Predictfy.pdf</span></div>
+</section>
+
+<section class="page" id="equipe">
+  <div class="eyebrow">Identificação</div><h1>Grupo Predictfy</h1>
+  <table><tr><th>Integrante</th><th>RM</th></tr>
+  <tr><td>Elton Vinicios Almeida de Oliveira</td><td>562187</td></tr>
+  <tr><td>Emerson dos Santos Silva</td><td>562033</td></tr>
+  <tr><td>Kelvin Douglas Ribeiro Rabelo</td><td>561538</td></tr>
+  <tr><td>Pedro Henrique Simão Soares</td><td>562283</td></tr>
+  <tr><td>Vitor Lucas Mattos de Brito Mariano</td><td>562116</td></tr></table>
+  <h2 style="margin-top:20px">Objetivo da entrega</h2>
+  <p>Demonstrar a execução em nuvem da solução atual: API FastAPI containerizada, consumo de um artefato de previsão real, persistência e processamento no Azure Database for MySQL e sinais verificáveis no Azure Monitor/Application Insights.</p>
+  <div class="note">Escopo estrito de Cloud. O frontend publicado, chatbot, Entra ID e telas atuais contextualizam o novo produto, mas não foram alterados.</div>
+  <div class="footer"><span>Predictfy · Sprint 3</span><span>2</span></div>
+</section>
+
+<section class="page" id="arquitetura">
+  <div class="eyebrow">1 · Desenho Draw.io</div><h1>Arquitetura executada</h1>
+  <div class="arch">
+    <div><div class="box">Usuários e cliente de evidência</div><div class="arrow">entrada: horizonte + segmento →</div><div class="box">Dashboard React no Vercel<br><span class="small">contexto; sem apontar HTTPS para ACI HTTP</span></div></div>
+    <div class="azure">
+      <div class="box">ACR Basic<br>2 imagens privadas</div><div class="box">ACI API<br>FastAPI atual</div><div class="box">ACI Bridge<br>ML → MySQL</div>
+      <div class="box">MySQL B1ms<br>insert · select · aggregate</div><div class="box">Log Analytics<br>KQL + logs</div><div class="box">Application Insights<br>OpenTelemetry</div>
+    </div>
+    <div><div class="box">Artefatos governados<br>Baseline · Prophet · LSTM<br>XGBoost · K-Means</div><div class="arrow">→ imagem versionada</div><div class="box">Azure CLI + Bicep<br>cria · testa · coleta · destrói</div></div>
+  </div>
+  <p><strong>Fluxo:</strong> o bridge recebe D+1/Total, lê o snapshot governado, obtém a previsão, grava no MySQL e retorna consulta/agregação. Os dois ACIs enviam logs e métricas ao Monitor; o bridge envia telemetria ao Application Insights.</p>
+  <div class="note">Fonte editável: <code>arquitetura_predictfy_azure.drawio</code>. Não há seta fictícia API → bridge nem integração direta do frontend HTTPS com o ACI HTTP.</div>
+  <div class="footer"><span>Resource Group · ACI · Docker · MySQL · Monitor/App Insights</span><span>3</span></div>
+</section>
+
+<section class="page" id="provisionamento">
+  <div class="eyebrow">2 · Provisionamento</div><h1>IaC reproduzível e econômica</h1>
+  <div class="grid3">
+    <div class="card"><div class="metric">7</div><strong>scripts shell</strong><p>Provisionamento, builds/deploys, verificação, exercício, coleta e descarte.</p></div>
+    <div class="card"><div class="metric">1</div><strong>Bicep MySQL</strong><p>B1ms, 32 GB, backup 1 dia, sem HA/geobackup.</p></div>
+    <div class="card"><div class="metric">R$ mínimo</div><strong>ambiente efêmero</strong><p>Sem VM, AKS, gateway ou recursos produtivos extras.</p></div>
+  </div>
+  <div class="terminal">$ az resource list -g rg-predictfy-sprint3-260819es
+log-predictfy-sprint3        Log Analytics           eastus2
+appi-predictfy-sprint3       Application Insights    eastus2
+predictfy260819es            Container Registry      eastus2
+predictfy-260819-cl          MySQL Flexible Server   chilecentral
+aci-predictfy-api            Container Instance      eastus2
+aci-predictfy-mysql-bridge   Container Instance      eastus2</div>
+  <p class="small">Chile Central foi usado somente porque a assinatura Azure for Students recusou capacidade MySQL nas outras regiões permitidas. Fonte: <code>evidencias/azure/01_recursos.json</code>.</p>
+  <div class="footer"><span>Azure CLI 2.89.1 · execução em 20/08/2026</span><span>4</span></div>
+</section>
+
+<section class="page" id="containers">
+  <div class="eyebrow">3 · Docker, ACR e ACI</div><h1>Aplicação containerizada em execução</h1>
+  <div class="grid">
+    <div class="card"><h2>API atual</h2><p><span class="ok">● Running</span></p><p>Imagem: <code>predictfy-api:sprint3</code><br>Digest: <code>sha256:cd4b95…0172</code><br>1 vCPU · 2 GB · porta 8000</p><div class="terminal">GET /api/health → 200
+status: ok
+modelos_disponiveis: 10</div></div>
+    <div class="card"><h2>Bridge MySQL</h2><p><span class="ok">● Running</span></p><p>Imagem: <code>predictfy-mysql-bridge:sprint3</code><br>Digest: <code>sha256:4be92a…ba7c</code><br>1 vCPU · 1,5 GB · porta 8080</p><div class="terminal">GET /health → 200
+artifact: true
+database: true</div></div>
+  </div>
+  <p>Os builds remotos ACR <code>ch1</code> e <code>ch2</code> utilizaram Dockerfiles reais, enviaram as imagens ao registro privado e os ACIs fizeram o pull das tags versionadas.</p>
+  <div class="footer"><span>Fontes: evidências 02–05 e logs de build ACR</span><span>5</span></div>
+</section>
+
+<section class="page" id="mysql">
+  <div class="eyebrow">4 · ML + banco</div><h1>Previsão, inserção, consulta e processamento</h1>
+  <div class="grid3">
+    <div class="card"><h3>Entrada</h3><div class="terminal">horizonte: 1
+segmento: total</div></div>
+    <div class="card"><h3>Resultado ML</h3><div class="metric">44,0</div><p>baseline_sazonal_7d · D+1</p></div>
+    <div class="card"><h3>Proveniência</h3><p><code>previsoes_baseline.json</code><br>SHA-256 <code>bdf84d…2863</code></p></div>
+  </div>
+  <div class="terminal">POST /executions/capture  → 200 OK  [INSERT]
+GET  /executions          → 200 OK  [SELECT: 1 registro]
+GET  /executions/summary  → 200 OK  [GROUP BY]
+
+modelo=baseline_sazonal_7d | horizonte=D+1 | segmento=total
+quantidade=1 | media_prevista=44.00</div>
+  <p>MySQL `Ready`, versão 8.0.21, SKU Standard_B1ms, retenção 1 dia. O schema persiste correlação, modelo, horizonte, segmento, valor, origem/hash do artefato e instante UTC — sem prompts, tokens ou dados pessoais.</p>
+  <div class="footer"><span>Fluxo executado na Azure · correlation ID registrado</span><span>6</span></div>
+</section>
+
+<section class="page" id="logs">
+  <div class="eyebrow">5 · Azure Monitor</div><h1>Logs consultados no Log Analytics</h1>
+  <div class="terminal">ContainerInstanceLog_CL
+| where TimeGenerated &gt; ago(2h)
+| project TimeGenerated, ContainerGroup_s, Message
+
+02:47:18  POST /executions/capture   200 OK
+02:47:19  GET  /executions?limit=10  200 OK
+02:47:20  GET  /executions/summary   200 OK
+02:49:29  GET  /executions           401 Unauthorized</div>
+  <div class="grid">
+    <div class="card"><h3>Sucesso controlado</h3><p>Previsão e operações do banco produziram logs HTTP 200 correlacionados no tempo.</p></div>
+    <div class="card"><h3>Falha controlada</h3><p>Chamada sem <code>X-Bridge-Key</code> foi bloqueada com HTTP 401, sem provocar indisponibilidade.</p></div>
+  </div>
+  <p class="small">Fonte real: <code>evidencias/azure/11_log_analytics_query.json</code>. A consulta retornou quatro registros.</p>
+  <div class="footer"><span>KQL · stdout do ACI centralizado</span><span>7</span></div>
+</section>
+
+<section class="page" id="metricas">
+  <div class="eyebrow">5 · Azure Monitor</div><h1>Métricas reais de infraestrutura e banco</h1>
+  <table><tr><th>Recurso</th><th>Métricas coletadas</th><th>Séries com amostras</th></tr>
+  <tr><td>ACI API</td><td>CpuUsage, MemoryUsage</td><td class="ok">2/2</td></tr>
+  <tr><td>ACI Bridge</td><td>CpuUsage, MemoryUsage</td><td class="ok">2/2</td></tr>
+  <tr><td>MySQL</td><td>cpu_percent, memory_percent, active_connections, Com_insert, Com_select</td><td class="ok">5/5</td></tr></table>
+  <div class="grid3" style="margin-top:15px"><div class="card"><div class="metric">CPU</div><p>Consumo observado nos dois containers.</p></div><div class="card"><div class="metric">RAM</div><p>Uso de memória coletado por minuto.</p></div><div class="card"><div class="metric">SQL</div><p>Conexões, INSERT e SELECT medidos.</p></div></div>
+  <p>As séries foram obtidas pela API do Azure Monitor com intervalo PT1M e agregação Average, não por dados simulados.</p>
+  <p class="small">Fontes: <code>12_metricas_aci_api.json</code>, <code>13_metricas_aci_bridge.json</code> e <code>14_metricas_mysql.json</code>.</p>
+  <div class="footer"><span>Azure Monitor Metrics</span><span>8</span></div>
+</section>
+
+<section class="page" id="appi">
+  <div class="eyebrow">5 · Application Insights</div><h1>Telemetria OpenTelemetry recebida</h1>
+  <div class="grid3"><div class="card"><div class="metric">7</div><strong>customMetrics</strong><p>Sinais do SDK e recurso instrumentado.</p></div><div class="card"><div class="metric">3</div><strong>dependencies</strong><p>Chamadas externas rastreadas.</p></div><div class="card"><div class="metric">1</div><strong>exceptions</strong><p>Timeout do detector de metadata registrado, sem afetar os health checks.</p></div></div>
+  <div class="terminal">union withsource=Tabela dependencies, exceptions, customMetrics
+| where timestamp &gt; ago(2h)
+| summarize Registros=count() by Tabela
+
+customMetrics  7
+dependencies   3
+exceptions     1</div>
+  <p>A consulta comprova uso efetivo do Application Insights; apenas criar o recurso não seria considerado evidência.</p>
+  <div class="footer"><span>Fonte: 15_app_insights_telemetria.json</span><span>9</span></div>
+</section>
+
+<section class="page" id="conclusao">
+  <div class="eyebrow">6 · Revisão e encerramento</div><h1>Requisitos atendidos e custo encerrado</h1>
+  <table><tr><th>Requisito oficial</th><th>Resultado</th></tr>
+  <tr><td>Draw.io + componentes Azure</td><td class="ok">Atendido</td></tr><tr><td>Azure CLI ou Terraform</td><td class="ok">Azure CLI + Bicep executados</td></tr>
+  <tr><td>Dockerfile + ACR/ACI</td><td class="ok">2 imagens e 2 ACIs Running</td></tr><tr><td>Consumo de ML</td><td class="ok">D+1 Total = 44,0</td></tr>
+  <tr><td>MySQL: inserção, consulta, processamento</td><td class="ok">Fluxo completo</td></tr><tr><td>Monitor/App Insights: logs e métricas</td><td class="ok">KQL, séries e OpenTelemetry</td></tr></table>
+  <div class="note" style="margin-top:15px"><strong>Controle de custo concluído:</strong> o script protegido <code>99_destroy.sh</code> removeu integralmente o Resource Group. A verificação independente <code>az group exists</code> retornou <strong>false</strong>; nenhum recurso da demonstração permanece ativo.</div>
+  <h2 style="margin-top:16px">Conclusão</h2><p>A solução demonstra o novo Predictfy sem alterar o MVP online. A entrega é replicável, baseada no material do professor e limitada aos recursos formalmente pedidos para Cloud.</p>
+  <div class="footer"><span>Predictfy · Sprint 3 Cloud</span><span>10</span></div>
+</section>
+</body></html>

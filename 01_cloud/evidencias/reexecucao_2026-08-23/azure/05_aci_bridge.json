@@ -1,0 +1,9 @@
+{
+  "CPU": 1.0,
+  "Estado": "Running",
+  "FQDN": "predictfy-bridge-260823es.eastus2.azurecontainer.io",
+  "IP": "20.96.209.32",
+  "Imagem": "predictfy260823es.azurecr.io/predictfy-mysql-bridge:sprint3",
+  "MemoriaGB": 1.5,
+  "Nome": "aci-predictfy-mysql-bridge"
+}

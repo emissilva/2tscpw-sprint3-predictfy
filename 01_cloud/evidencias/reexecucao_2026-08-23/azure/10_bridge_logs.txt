@@ -1,0 +1,19 @@
+INFO:     Started server process [19]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+INFO:     10.92.0.21:52127 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.92.0.21:52133 - "POST /executions/capture HTTP/1.1" 200 OK
+INFO:     10.92.0.21:52141 - "GET /executions?limit=10 HTTP/1.1" 200 OK
+INFO:     10.92.0.21:52145 - "GET /executions/summary HTTP/1.1" 200 OK
+INFO:     10.92.0.19:51968 - "GET /executions HTTP/1.1" 401 Unauthorized
+INFO:     10.92.0.19:53621 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.92.0.21:54005 - "POST /executions/capture HTTP/1.1" 422 Unprocessable Entity
+INFO:     10.92.0.19:53758 - "GET /executions/summary HTTP/1.1" 401 Unauthorized
+INFO:     10.92.0.21:54178 - "POST /executions/capture HTTP/1.1" 200 OK
+INFO:     10.92.0.19:53962 - "GET /executions?limit=2 HTTP/1.1" 200 OK
+INFO:     10.92.0.21:54185 - "GET /executions/summary HTTP/1.1" 200 OK
+INFO:     10.92.0.19:54149 - "POST /executions/capture HTTP/1.1" 200 OK
+INFO:     10.92.0.21:54350 - "GET /executions?limit=1 HTTP/1.1" 200 OK
+INFO:     10.92.0.19:54152 - "GET /executions/summary HTTP/1.1" 200 OK
+

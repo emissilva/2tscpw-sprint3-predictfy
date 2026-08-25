@@ -1,0 +1,10 @@
+Nome                                        Tipo                                                Regiao
+------------------------------------------  --------------------------------------------------  ------------
+log-predictfy-sprint3                       Microsoft.OperationalInsights/workspaces            eastus2
+appi-predictfy-sprint3                      Microsoft.Insights/components                       eastus2
+predictfy260819es                           Microsoft.ContainerRegistry/registries              eastus2
+Application Insights Smart Detection        microsoft.insights/actiongroups                     global
+Failure Anomalies - appi-predictfy-sprint3  microsoft.alertsmanagement/smartDetectorAlertRules  global
+predictfy-260819-cl                         Microsoft.DBforMySQL/flexibleServers                chilecentral
+aci-predictfy-mysql-bridge                  Microsoft.ContainerInstance/containerGroups         eastus2
+aci-predictfy-api                           Microsoft.ContainerInstance/containerGroups         eastus2

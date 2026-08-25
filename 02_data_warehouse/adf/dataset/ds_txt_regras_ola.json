@@ -1,0 +1,12 @@
+{
+  "name": "ds_txt_regras_ola",
+  "properties": {
+    "linkedServiceName": {"referenceName": "ls_blob_predictfy", "type": "LinkedServiceReference"},
+    "type": "DelimitedText",
+    "typeProperties": {
+      "location": {"type": "AzureBlobStorageLocation", "container": "landing", "fileName": "regras_ola.txt"},
+      "columnDelimiter": "|", "escapeChar": "\\", "firstRowAsHeader": true, "quoteChar": "\""
+    },
+    "schema": []
+  }
+}

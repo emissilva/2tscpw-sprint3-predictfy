@@ -1,0 +1,11 @@
+{
+  "Estado": "Ready",
+  "FQDN": "predictfy-260823-cl.mysql.database.azure.com",
+  "GeoBackup": "Disabled",
+  "Nome": "predictfy-260823-cl",
+  "RetencaoDias": 1,
+  "SKU": "Standard_B1ms",
+  "StorageGB": 32,
+  "Tier": "Burstable",
+  "Versao": "8.0.21"
+}

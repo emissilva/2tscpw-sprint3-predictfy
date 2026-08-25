@@ -1,0 +1,20 @@
+[1/4] Health
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0100   121  100   121    0     0     76      0  0:00:01  0:00:01 --:--:--    76
+{"status":"ok","artifact":true,"database":true,"database_error_type":null,"timestamp":"2026-08-23T18:22:28.631375+00:00"}
+[2/4] Inserção de execução D+1 Total
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    34    0     0  100    34      0     30  0:00:01  0:00:01 --:--:--    30100   359  100   325  100    34    224     23  0:00:01  0:00:01 --:--:--   248
+{"correlation_id":"da65e3cd-4021-423c-9de6-b9565869ac96","modelo":"baseline_sazonal_7d","horizonte":"D+1","segmento":"total","valor_previsto":44.0,"origem_artefato":"previsoes_baseline.json","artefato_sha256":"bdf84db02e295d834236f0002ff6f2ba64e0d13227e2ec17a3257853c8db2863","executado_em_utc":"2026-08-23T18:22:28.954528Z"}
+[3/4] Consulta das execuções
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0100   361  100   361    0     0    255      0  0:00:01  0:00:01 --:--:--   255
+{"total_retornado":1,"items":[{"correlation_id":"da65e3cd-4021-423c-9de6-b9565869ac96","modelo":"baseline_sazonal_7d","horizonte":"D+1","segmento":"total","valor_previsto":"44.0000","origem_artefato":"previsoes_baseline.json","artefato_sha256":"bdf84db02e295d834236f0002ff6f2ba64e0d13227e2ec17a3257853c8db2863","executado_em_utc":"2026-08-23T18:22:28.954528"}]}
+[4/4] Processamento agregado
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0100   173  100   173    0     0    131      0  0:00:01  0:00:01 --:--:--   131100   173  100   173    0     0    131      0  0:00:01  0:00:01 --:--:--   131
+{"grupos":[{"modelo":"baseline_sazonal_7d","horizonte":"D+1","segmento":"total","quantidade":1,"media_prevista":"44.00","ultima_execucao_utc":"2026-08-23T18:22:28.954528"}]}

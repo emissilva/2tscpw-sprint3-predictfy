@@ -1,0 +1,31 @@
+{
+  "tables": [
+    {
+      "columns": [
+        {
+          "name": "Tabela",
+          "type": "string"
+        },
+        {
+          "name": "Registros",
+          "type": "long"
+        }
+      ],
+      "name": "PrimaryResult",
+      "rows": [
+        [
+          "customMetrics",
+          7
+        ],
+        [
+          "dependencies",
+          3
+        ],
+        [
+          "exceptions",
+          1
+        ]
+      ]
+    }
+  ]
+}
